@@ -13,6 +13,7 @@ import ParentLogin from './pages/parent-login';
 import ParentSignup from './pages/parent-signup';
 import AdminLogin from "./pages/admin-login";
 import CreateStudents from "./pages/create-student";
+import CreateCourse from "./pages/create-course";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path="parent/signup/" element={<ParentSignup />} />
       <Route path="admin/dashboard/" element={<AdminDashboard />} />
       <Route path="admin/class/create/" element={<CreateClass />} />
+      <Route path="admin/course/create/" element={<CreateCourse />} />
       <Route path="admin/student/create/" element={<CreateStudents />} />
       <Route path="*" element={<NoPage />} />
     </Routes>
