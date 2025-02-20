@@ -107,7 +107,7 @@ const TeacherLogin = ()=>{
                             
                         </button>
                     </div>
-                    <Link href ='/teacher/signup/' className='link-wrapper'>Signup</Link><br />
+                    <Link to ='/teacher/signup/' className='link-wrapper'>Signup</Link><br />
                 </form>
             </div>
         </div>
