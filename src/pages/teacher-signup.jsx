@@ -103,6 +103,7 @@ const Signup = ()=>{
         setConfirmPassword(event.target.value);
     };
     return(
+       <>
         <div className='page-wrapper'>
             <Header/>
             <div className='wrapper signup-wrapper'>
@@ -152,6 +153,8 @@ const Signup = ()=>{
                 </form>
             </div>
         </div>
+        <Footer />
+       </>
     );
 };
 

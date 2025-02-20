@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link , useParams,useNavigate} from 'react-router-dom';
 import Header from '../components/header';
 import '../styles/signup.css';
-
+import Footer from "../components/footer";
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser, setLoading } from '../actions/user-action'; // Import setUser and setLoading actions
@@ -76,6 +76,7 @@ const TeacherLogin = ()=>{
     };
    
     return(
+        <>
         <div className='page-wrapper'>
             <Header/>
             <div className='wrapper'>
@@ -106,9 +107,14 @@ const TeacherLogin = ()=>{
                             
                         </button>
                     </div>
+                    <Link href ='/teacher/signup/' className='link-wrapper'>Signup</Link><br />
                 </form>
             </div>
         </div>
+        <Footer />
+        </>
+        
+        
     );
 };
 

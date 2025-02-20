@@ -10,7 +10,7 @@ import { setUser, setLoading } from '../actions/user-action'; // Import setUser 
 import apiUrl from '../components/api-url';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
-
+import Footer from "../components/footer";
 
 const ParentSignup = ()=>{
     const dispatch = useDispatch();
@@ -103,6 +103,7 @@ const ParentSignup = ()=>{
         setConfirmPassword(event.target.value);
     };
     return(
+       <>
         <div className='page-wrapper'>
             <Header/>
             <div className='wrapper signup-wrapper'>
@@ -152,6 +153,8 @@ const ParentSignup = ()=>{
                 </form>
             </div>
         </div>
+        <Footer />
+       </>
     );
 };
 
