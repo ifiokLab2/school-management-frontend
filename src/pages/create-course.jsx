@@ -95,7 +95,7 @@ const CreateCourse = () => {
 
         try {
             // Make the POST request to create the class
-            const response = await axios.post(`${apiUrl}/api/student-create/`, {
+            const response = await axios.post(`${apiUrl}/api/courses/`, {
                 name: name,
                 description:description,
                 teachers: selectedTeachers,
@@ -106,7 +106,7 @@ const CreateCourse = () => {
             console.log("Class created successfully:", response.data);
             //setClassName('');
 
-            setSelectedteachers([]);
+            setSelectedTeachers([]);
             setFormModal(false);  // Close the form modal after successful creation
         } catch (error) {
             setIsLoading(false);
@@ -128,16 +128,17 @@ const CreateCourse = () => {
                 formData.append('teachers', selectedTeachers);
             }
             
-            const response =  await axios.put(`${apiUrl}/api/course/${courseId}/`, formData, {
+            const response =  await axios.put(`${apiUrl}/api/courses/${courseId}/`, formData, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             });
 
             setIsLoading(false);
+            closeEditForm();
             fetchCourses();
             console.log("Class created successfully:", response.data);
             
 
-            setSelectedteachers([]);
+            setSelectedTeachers([]);
             setFormModal(false);  // Close the form modal after successful creation
         } catch (error) {
             setIsLoading(false);
@@ -152,7 +153,7 @@ const CreateCourse = () => {
         try {
             const formData = new FormData();
             
-            const response =  await axios.delete(`${apiUrl}/school-classes/${courseId}/`, formData, {
+            const response =  await axios.delete(`${apiUrl}/api/courses/${courseId}/`, formData, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             });
             setIsLoading(false);
@@ -197,7 +198,7 @@ const CreateCourse = () => {
                                     <td>{data.id}</td>
                                     <td>{data.name}</td>
                                     <td>{data.description}</td>
-                                    <td>{data.teachers}</td>
+                                    <td>{data.teachers.map((t) => t.name).join(", ")}</td>
                                    
                                     <td>
                                         {/* admin should be able to delete or edit classes,can you provide updated code */}
@@ -215,7 +216,7 @@ const CreateCourse = () => {
             <form className={`organization-form ${formModal ? 'show' : ''}`} onSubmit={handleSubmit}>
                 <div className="form-wrapper">
                     <div className="form-header-x">
-                        <div className="title">Add student</div>
+                        <div className="title">Create Course</div>
                         <div className="icon" onClick={toggleForm }>
                             <i className="fa-solid fa-circle-xmark"></i>
                         </div>
@@ -275,7 +276,7 @@ const CreateCourse = () => {
             <form className={`organization-form ${editFormModal ? 'show' : ''}`} onSubmit={handleEditSubmit}>
                 <div className="form-wrapper">
                     <div className="form-header-x">
-                        <div className="title">Update Student</div>
+                        <div className="title">Update Course</div>
                         <div className="icon" onClick={closeEditForm}>
                             <i className="fa-solid fa-circle-xmark"></i>
                         </div>
@@ -335,7 +336,7 @@ const CreateCourse = () => {
             <form className={`organization-form ${deleteModal ? 'show' : ''}`} onSubmit={handleDelete}>
             <div className="form-wrapper">
                 <div className="form-header-x">
-                    <div className="title">Delete Class</div>
+                    <div className="title">Delete Course</div>
                     <div className="icon" onClick={closeDeleteForm}>
                         <i className="fa-solid fa-circle-xmark"></i>
                     </div>

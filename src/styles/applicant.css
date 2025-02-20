@@ -7,7 +7,18 @@
 }
 .job-list-wrapper{
     padding: 30px;
-    background-color: yellow;
+   
+}
+.filter-wrapper{
+    display: flex;
+    align-items: center;
+}
+.filter-wrapper button{
+    background-color: #2196F3;
+    border: transparent;
+    padding: 10px 20px;
+    cursor: pointer;
+    color:white
 }
 
 

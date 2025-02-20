@@ -9,7 +9,8 @@ import '../styles/signup.css';
 import '../styles/organization-dashboard.css';
 import '../styles/repository.css';
 import '../styles/applicant.css';
-
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
 import OrganizationHeader from '../components/organization-header';
 import OrganizationSidebar from '../components/organization-sidebar';
 const CreateClass = () => {
@@ -26,7 +27,13 @@ const CreateClass = () => {
     const [classList, setClassList] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
-
+    const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "" });
+    
+    
+   
+    const handleSnackbarClose = () => {
+        setSnackbar({ open: false, message: "", severity: "" });
+    };
     const toggleSidebar = () => {
         setSidebarOpen(!sidebarOpen);
     };
@@ -134,6 +141,11 @@ const CreateClass = () => {
             setGrade('');
             setSelectedTeachers([]);
             fetchClasses();
+            setSnackbar({
+                open: true,
+                message: "success!",
+                severity: "success",
+            });
             closeEditForm();  // Close the form modal after successful creation
         } catch (error) {
             setIsLoading(false);
@@ -153,6 +165,11 @@ const CreateClass = () => {
             });
             setIsLoading(false);
             fetchClasses();
+            setSnackbar({
+                open: true,
+                message: "success!",
+                severity: "success",
+            });
             closeDeleteForm();  // Close the form modal after successful creation
         } catch (error) {
             setIsLoading(false);
@@ -371,6 +388,21 @@ const CreateClass = () => {
                 </div>
             </div>
         </form>
+
+        <Snackbar
+        open={snackbar.open}
+        autoHideDuration={6000}
+        onClose={handleSnackbarClose}
+        >
+        <MuiAlert
+        elevation={6}
+        variant="filled"
+        onClose={handleSnackbarClose}
+        severity={snackbar.severity}
+        >
+        {snackbar.message}
+        </MuiAlert>
+        </Snackbar>
         </div>
     );
 };

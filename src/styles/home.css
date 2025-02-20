@@ -14,13 +14,16 @@ body{
 .home-wrapper{
     margin: 0;
     padding: 0;
+    flex-grow: 1;
+    
 }
 .hero-container{
     margin-top: 65px;
 }
 .hero-container img{
-    height: 65vh;
+    height: 100vh;
     width: 100%;
+  
 }
 .hero-container .dream-container{
     position: absolute;
@@ -176,7 +179,117 @@ body{
     margin-right: 5px;
     
 }
+.offer-wrapper{
+    padding: 6%;
+    
+}
+.offer-wrapper .container-1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.offer-wrapper .container-2 .icon.cap{
+   
+    background: #7E067833;
+    height: 50px;
+    width: 50px;
+    border-radius:50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.offer-wrapper .container-2 .icon.school{
+    background-color: #2455A833;
+    height: 50px;
+    width: 50px;
+    border-radius:50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.offer-wrapper .container-2 .icon.star{
+    background: #43870B33;
+    height: 50px;
+    width: 50px;
+    border-radius:50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.offer-wrapper .container-2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.offer-wrapper .container-2 .cards{
+   padding: 30px;
+  
 
+}
+.offer-wrapper .container-2 .cards h2{
+    font-size: 1.3rem;
+    
+}
+.info-wrapper{
+    padding:6%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.info-wrapper  .cards {
+    color: rgb(231 167 40 / 1);
+    
+}
+.info-wrapper  .cards .num {
+    font-size: 1.3rem;
+   font-weight: 700;
+   
+}
+
+.activity-wrapper{
+    padding: 6%;
+}
+.activity-wrapper .container-1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.activity-wrapper .container-2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.activity-wrapper .container-2 .cards{
+    position: relative;
+    margin: 10px;
+}
+.activity-wrapper .container-2 .cards img{
+  height: 220px;
+  width: auto;
+}
+
+.activity-wrapper .container-2 .cards .wrapper{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+}
+.activity-wrapper .container-2 .cards .text{
+    color: white;
+    padding: 9px;
+    font-size: 1rem;
+  
+}
 @media screen and (max-width:799px){
     
     .hero-container .dream-container{
@@ -217,5 +330,16 @@ body{
         justify-content: center;
         font-size: 1rem;
     }
+    .offer-wrapper .container-2{
+        flex-direction: column;
+    }
+    .activity-wrapper .container-2{
+        flex-direction:column;
+    }
+    .info-wrapper{
+        justify-content: center;
+        gap: 50px;
+    }
+   
 
 }

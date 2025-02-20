@@ -35,7 +35,7 @@ const TeacherLogin = ()=>{
         try {
             dispatch(setLoading(true));
            
-            const response = await axios.post(`${apiUrl}/login/`, {
+            const response = await axios.post(`${apiUrl}/teacher/login/`, {
             email,
             password,
             });
@@ -45,7 +45,7 @@ const TeacherLogin = ()=>{
 
                 // Redirect to the home page
                 setTimeout(() => {
-                    navigate('/'); // Change '/' to the actual path of your home page
+                    navigate('/teacher/manage/attendance/'); // Change '/' to the actual path of your home page
                 }, 2000); // 2000 milliseconds (2 seconds) delay
             } else {
                 console.error('Signup failed:',response.data.errors);
@@ -82,7 +82,7 @@ const TeacherLogin = ()=>{
                 <form className="form-container" onSubmit={handleSubmit}>
                     <div className='form-header'>
                         <i class="fa-solid fa-user"></i>
-                        <span>Admin Login</span>
+                        <span>Teacher Login</span>
                         
                     </div>
                     {errorMessage && <div className="error-message">{errorMessage}</div>}

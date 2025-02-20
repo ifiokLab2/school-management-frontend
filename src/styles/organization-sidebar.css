@@ -23,8 +23,7 @@
     left: 0;
     width: 200px;
     z-index: 200;
-   
-    background-color: #2d2f31;
+    background-color: #13293d;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -53,9 +52,7 @@
     color: white;
     margin-right: 12px;
 }
-.organization-sidebar .tabs:hover{
-    background-color:#6a6f73;
-}
+
 .organization-sidebar .header-tab{
     display: flex;
     justify-content: space-between;

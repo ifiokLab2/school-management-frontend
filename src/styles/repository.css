@@ -170,9 +170,22 @@
     grid-auto-rows: auto;
     gap: 1.0rem;
     margin-top: 20px;
-   border:dashed
+  
     
    
+}
+table .record{
+    display: flex;
+    align-items: center;
+}
+table .record button{
+    background-color: darkblue;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
  .apps-container .cards{
     text-decoration: none;

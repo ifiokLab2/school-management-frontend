@@ -14,15 +14,27 @@ import ParentSignup from './pages/parent-signup';
 import AdminLogin from "./pages/admin-login";
 import CreateStudents from "./pages/create-student";
 import CreateCourse from "./pages/create-course";
+import TeacherDashboard from "./pages/teacher-dashboard";
+import TeacherLogin from './pages/teacher-login';
+import TeacherClasses from './pages/teacher-classes';
+import Attendance from './pages/attendance';
+import ParentAttendance from './pages/parent-attendance';
+import ParentChild from './pages/parent-child';
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="parent/pupils/" element={<ParentChild />} />
+      <Route path="parent/attendance/:classId/class/:childId/child/" element={<ParentAttendance />} />
+      <Route path="teacher/attendance/:classId/class/" element={<Attendance />} />
+      <Route path="teacher/manage/attendance/" element={<TeacherClasses />} />
+      <Route path="teacher/login/" element={<TeacherLogin />} />
       <Route path="admin/login/" element={<AdminLogin />} />
       <Route path="parent/login/" element={<ParentLogin />} />
       <Route path="parent/signup/" element={<ParentSignup />} />
+      <Route path="teacher/dashboard/" element={<TeacherDashboard />} />
       <Route path="admin/dashboard/" element={<AdminDashboard />} />
       <Route path="admin/class/create/" element={<CreateClass />} />
       <Route path="admin/course/create/" element={<CreateCourse />} />

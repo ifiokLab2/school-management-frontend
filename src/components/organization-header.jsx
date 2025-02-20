@@ -25,18 +25,7 @@ const OrganizationHeader = ({ toggleSidebar })=>{
                 <div className='logo'>Logo</div>
             </div>
             <div className='box-b-wrapper'>
-               <Link href="" className='card-box'>
-                    <div className='icon'>
-                        <i className="fa-solid fa-circle-question"></i>
-                    </div>
-                    <div className='text'>Help</div>
-               </Link>
-               <Link href="" className='card-box'>
-                    <div className='icon'>
-                        <i className="fa-solid fa-bell"></i>
-                    </div>
-                    <div className='text'>Notification</div>
-               </Link>
+               
                <Link href="/organization/profile/" className='card-box'>
                     <div className='icon'>
                         <i className="fa-solid fa-user"></i>

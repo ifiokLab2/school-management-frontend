@@ -45,92 +45,84 @@ const OrganizationSidebar = ({ className, toggleSidebar }) => {
               <i className="fa-solid fa-xmark"></i>
             </div>
           </div>
-          {2 > 1 ? (
+          {user?.isAdmin ? (
             <>
               <div className="tabs">
                 <div
                   className="main-link"
-                  onClick={() => toggleSublink('organization')}
+                  
                 >
                   <div className="icon">
                     
                   </div>
                   <div className="text">Organization</div>
-                  {openSublinks['organization'] ? (
-                    <ExpandMore className="chevron-icon" />
-                  ) : (
-                    <ChevronRight className="chevron-icon" />
-                  )}
+                
                 </div>
-                {openSublinks['organization'] && (
-                  <div className="sub-links">
+                <div className="sub-links">
                     <Link to="/admin/class/create/">Manage class</Link>
                     <Link to="/admin/student/create/">Manage students</Link>
                     <Link to="/organization/settings/">Settings</Link>
                   </div>
-                )}
               </div>
   
-              <div className="tabs">
-                <div className="main-link" onClick={() => toggleSublink('jobs')}>
-                  <div className="icon">
-                   {/* icon */}
-                  </div>
-                  <div className="text">Jobs</div>
-                  {openSublinks['jobs'] ? (
-                    <ExpandMore className="chevron-icon" />
-                  ) : (
-                    <ChevronRight className="chevron-icon" />
-                  )}
-                </div>
-                {openSublinks['jobs'] && (
-                  <div className="sub-links">
-                    <Link href="/organization/jobs/create/">Create Jobs</Link>
-                    <Link href="/organization/job/list/">Job List</Link>
-                  </div>
-                )}
-              </div>
-  
-              <Link href="/organization/employee/list/" className="tabs">
-                <div className="icon">
-                   {/* icon */}
-                </div>
-                <div className="text">Employees</div>
-              </Link>
+             
   
              
             </>
           ) : (
-            <>
+            ""
+          )}
+
+          {user?.isTeacher ? (
+              <>
               <div className="tabs">
                 <div
                   className="main-link"
-                  onClick={() => toggleSublink('user-jobs')}
+                  
                 >
                   <div className="icon">
                      {/* icon */}
                   </div>
-                  <div className="text">Jobs</div>
-                  {openSublinks['user-jobs'] ? (
-                    <ExpandMore className="chevron-icon" />
-                  ) : (
-                    <ChevronRight className="chevron-icon" />
-                  )}
+                  <div className="text">Dashboard</div>
+                  
                 </div>
-                {openSublinks['user-jobs'] && (
-                  <div className="sub-links">
-                    <Link href="/user/jobs/list/">Job List</Link>
+                <div className="sub-links">
+                    <Link to="/teacher/manage/attendance/">Manage Attendance</Link>
+                   
+                    
+                    
                   </div>
-                )}
               </div>
   
-              <Link href="/organization/employee/repository/" className="tabs">
-                <div className="icon">
-                  {/* icon */}
-                </div>
-                <div className="text">Repository</div>
-              </Link>
             </>
+          ):(
+            ""
+          )}
+
+          {user?.isParent ? (
+            <>
+            <div className="tabs">
+              <div
+                className="main-link"
+                
+              >
+                <div className="icon">
+                   {/* icon */}
+                </div>
+                <div className="text">Dashboard</div>
+                
+              </div>
+              <div className="sub-links">
+                  <Link to="/parent/pupils/">Child Attendance</Link>
+                 
+                  
+                  
+                </div>
+            </div>
+
+          </>
+          ):(
+            ""
           )}
         </div>
         <div className="box-b">

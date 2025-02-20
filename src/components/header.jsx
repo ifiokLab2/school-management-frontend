@@ -1,9 +1,12 @@
-'use client';
+
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+
 import '../styles/header.css';
 import { Link , useParams} from 'react-router-dom';
+import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUser, setLoading } from '../actions/user-action'; // Import setUser and setLoading actions
+import apiUrl from '../components/api-url';
 
 const Header = ()=>{
     const dispatch = useDispatch();
@@ -18,6 +21,19 @@ const Header = ()=>{
     const toggleSidebar = ()=>{
         setsidebarOpen(!sidebarOpen);
     }
+    const handleLogout = async () => {
+        try {
+          const response = await axios.post(`${apiUrl}/logout/`);
+          if (response.data.success) {
+            dispatch(setUser(null));
+          } else {
+            console.error('Logout failed:', response.data.message);
+          }
+        } catch (error) {
+          console.error('An error occurred during logout:', error);
+        }
+      };
+    
    
 
     return(
@@ -31,11 +47,9 @@ const Header = ()=>{
                     Logo
                 </Link>
                 <Link href ='/jobs/' className='job-link'>
-                    Jobs
+                    Admission
                 </Link>
-                <Link href ='/user-courses/' className='courses-link'>
-                    Courses
-                </Link>
+                
            </div>
            <div className='header-box-b'>
                
@@ -45,36 +59,23 @@ const Header = ()=>{
                         <div className='user-email'>
                             {user?.email}
                         </div>
-                        <Link  href = '/organization/profile/' className='profile-tabs'>
-                            <i className="fa-solid fa-address-card"></i>
-                            <span>Profile</span>
-                        </Link>
-                        <Link  href = '/user/jobs/' className='profile-tabs'>
-                             <i className="fa-solid fa-bookmark"></i>
-                            <span>My Jobs</span>
-                        </Link>
-                        <Link  href = '' className='profile-tabs'>
-                            <i className="fa-solid fa-gear"></i>
-                            <span>Settings</span>
-                        </Link>
+                        
                         <Link  href = '' className='profile-tabs'>
                             <i className="fa-solid fa-circle-question"></i>
                             <span>Help center</span>
                         </Link>
                     </div>
                 </div>
-                {user?.isLoggedIn ? (
-                    <Link href ='/logout/' className='login-link'>
+                {user? (
+                    <div onClick={handleLogout} className='login-link'>
                     Logout
-                </Link>
+                </div>
                 ):(
-                    <Link href ='/login/' className='login-link'>
+                    <Link to ='/teacher/login/' className='login-link'>
                         Login
                     </Link>
                 )}
-                <Link href = '/organization/jobs/create/' className='job-link'>
-                    Post Job
-                </Link>
+               
            </div>
            
              </div>
@@ -82,46 +83,23 @@ const Header = ()=>{
             <div className='sidebar-wrapper'>
                 <div className = 'auth-tab' >
                 <div className='auth-wrapper'>
-                        <Link href =''>Login</Link>
+                        <Link to='/teacher/login/'>Login</Link>
                 </div>
                 <div className='auth-wrapper'>
-                        <Link href =''>signup</Link>
+                        <Link to =''></Link>
                 </div>
                 </div>
                 <div className='side-body'>
-                    <div className='title'>Most Popular</div>
+                    <div className='title'></div>
                     <div className='link-btn'>
                         <Link href ='' >
-                            <div className='text'>Jobs</div>
+                            <div className='text'>J</div>
                             <div className='icon'>
                                 <i className="fa-solid fa-chevron-right"></i>
                             </div>
                         </Link>  
                     </div>
-                    <div className='link-btn'>
-                        <Link href ='/user-courses/' >
-                            <div className='text'>Courses</div>
-                            <div className='icon'>
-                                <i className="fa-solid fa-chevron-right"></i>
-                            </div>
-                        </Link>  
-                    </div>
-                    <div className='link-btn'>
-                        <Link href ='' >
-                            <div className='text'>Post Jobs</div>
-                            <div className='icon'>
-                                <i className="fa-solid fa-chevron-right"></i>
-                            </div>
-                        </Link>  
-                    </div>
-                    <div className='link-btn'>
-                        <Link href ='' >
-                            <div className='text'>Help Center</div>
-                            <div className='icon'>
-                                <i className="fa-solid fa-chevron-right"></i>
-                            </div>
-                        </Link>  
-                    </div>
+                    
                     
                 </div>
             </div>

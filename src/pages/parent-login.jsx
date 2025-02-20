@@ -82,7 +82,7 @@ const ParentLogin = ()=>{
                 <form className="form-container" onSubmit={handleSubmit}>
                     <div className='form-header'>
                         <i class="fa-solid fa-user"></i>
-                        <span>Admin Login</span>
+                        <span>Parent Login</span>
                         
                     </div>
                     {errorMessage && <div className="error-message">{errorMessage}</div>}
