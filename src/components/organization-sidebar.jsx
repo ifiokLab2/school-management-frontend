@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link , useParams} from 'react-router-dom';
+import { Link , useParams,useNavigate} from 'react-router-dom';
 import { useDispatch,useSelector } from 'react-redux';
 import { setUser } from '../actions/user-action'; // Import actions
 import axios from 'axios';
@@ -13,7 +13,7 @@ import { ChevronRight, ExpandMore } from '@mui/icons-material';
 const OrganizationSidebar = ({ className, toggleSidebar }) => {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user.user);
-  
+    const navigate = useNavigate();
     const [openSublinks, setOpenSublinks] = useState({});
   
     const toggleSublink = (link) => {
