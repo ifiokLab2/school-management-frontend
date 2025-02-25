@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 
-const Signup = ()=>{
+const AdminSignup = ()=>{
     const dispatch = useDispatch();
     const loading = useSelector((state) => state.loading);
     const [isLoading, setIsLoading] = useState(false);
@@ -50,7 +50,7 @@ const Signup = ()=>{
         try {
             dispatch(setLoading(true));
            
-            const response = await axios.post(`${apiUrl}/teacher/signup/`, {
+            const response = await axios.post(`${apiUrl}/admin-signup/`, {
             first_name: fname,
             last_name: lname,
             email,
@@ -159,4 +159,4 @@ const Signup = ()=>{
     );
 };
 
-export default Signup;
+export default AdminSignup;

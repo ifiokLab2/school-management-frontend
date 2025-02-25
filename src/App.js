@@ -21,12 +21,14 @@ import TeacherClasses from './pages/teacher-classes';
 import Attendance from './pages/attendance';
 import ParentAttendance from './pages/parent-attendance';
 import ParentChild from './pages/parent-child';
+import AdminSignup from './pages/admin-signup';
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="admin/signup/" element={<AdminSignup />} />
       <Route path="teacher/signup/" element={<TeacherSignup />} />
       <Route path="parent/pupils/" element={<ParentChild />} />
       <Route path="parent/attendance/:classId/class/:childId/child/" element={<ParentAttendance />} />

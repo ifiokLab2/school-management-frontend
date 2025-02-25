@@ -134,6 +134,7 @@ const CreateStudents = () => {
 
             setIsLoading(false);
             fetchClasses();
+            fetchStudents();
             console.log("Class created successfully:", response.data);
             //setClassName('');
 
