@@ -23,17 +23,9 @@ const OrganizationSidebar = ({ className, toggleSidebar }) => {
       }));
     };
   
-    const handleLogout = async () => {
-      try {
-        const response = await axios.post(`${apiUrl}/logout/`);
-        if (response.data.success) {
-          dispatch(setUser(null));
-        } else {
-          console.error('Logout failed:', response.data.message);
-        }
-      } catch (error) {
-        console.error('An error occurred during logout:', error);
-      }
+    const handleLogout =() => {
+      dispatch(setUser(null));
+      navigate('/');
     };
   
     return (

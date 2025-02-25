@@ -51,7 +51,7 @@ const AdminLogin = () => {
 
                 // Redirect to the home page
                 setTimeout(() => {
-                    navigate('/'); // Change '/' to the actual path of your home page
+                    navigate('/admin/dashboard/'); // Change '/' to the actual path of your home page
                 }, 2000); // 2000 milliseconds (2 seconds) delay
             } else {
                 console.error('Signup failed:',response.data.errors);

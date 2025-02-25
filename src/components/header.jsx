@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 import '../styles/header.css';
-import { Link , useParams} from 'react-router-dom';
+import { Link , useParams,useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser, setLoading } from '../actions/user-action'; // Import setUser and setLoading actions
@@ -13,7 +13,7 @@ const Header = ()=>{
     const user = useSelector((state) => state.user.user);
     const [sidebarOpen,setsidebarOpen] = useState(false);
     const [profile,setprofile] = useState(false);
-
+    const navigate = useNavigate();
     const toggleProfile = ()=>{
         setprofile(!profile);
     }
@@ -21,17 +21,9 @@ const Header = ()=>{
     const toggleSidebar = ()=>{
         setsidebarOpen(!sidebarOpen);
     }
-    const handleLogout = async () => {
-        try {
-          const response = await axios.post(`${apiUrl}/logout/`);
-          if (response.data.success) {
-            dispatch(setUser(null));
-          } else {
-            console.error('Logout failed:', response.data.message);
-          }
-        } catch (error) {
-          console.error('An error occurred during logout:', error);
-        }
+    const handleLogout =() => {
+        dispatch(setUser(null));
+        navigate('/');
       };
     
    
