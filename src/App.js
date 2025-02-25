@@ -16,6 +16,7 @@ import CreateStudents from "./pages/create-student";
 import CreateCourse from "./pages/create-course";
 import TeacherDashboard from "./pages/teacher-dashboard";
 import TeacherLogin from './pages/teacher-login';
+import TeacherSignup from './pages/teacher-signup';
 import TeacherClasses from './pages/teacher-classes';
 import Attendance from './pages/attendance';
 import ParentAttendance from './pages/parent-attendance';
@@ -26,6 +27,7 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="teacher/signup/" element={<TeacherSignup />} />
       <Route path="parent/pupils/" element={<ParentChild />} />
       <Route path="parent/attendance/:classId/class/:childId/child/" element={<ParentAttendance />} />
       <Route path="teacher/attendance/:classId/class/" element={<Attendance />} />
