@@ -3,7 +3,18 @@
     min-height: 100vh;
     display: flex;
 }
-
+.delete{
+    color: white;
+    background-color: red;
+    border: transparent;
+    padding: 10px 20px;
+}
+.edit-btn{
+    color: white;
+    background-color: #2196F3;
+    border: transparent;
+    padding: 10px 20px;
+}
 .job-card{
     position: relative;
 }

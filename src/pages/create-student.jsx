@@ -248,8 +248,8 @@ const CreateStudents = () => {
                                     <td>{schoolClass.parent_phone_number}</td>
                                     <td>
                                         {/* admin should be able to delete or edit classes,can you provide updated code */}
-                                        <button onClick={()=>toggleDeleteForm(schoolClass.id)}>delete</button>
-                                        <button onClick = {()=>toggleEditForm(schoolClass.id,schoolClass.first_name,schoolClass.last_name,schoolClass.reg_no,schoolClass.parent_phone_number)}>Edit</button>
+                                        <button className='delete' onClick={()=>toggleDeleteForm(schoolClass.id)}>delete</button>
+                                        <button className='edit-btn' onClick = {()=>toggleEditForm(schoolClass.id,schoolClass.first_name,schoolClass.last_name,schoolClass.reg_no,schoolClass.parent_phone_number)}>Edit</button>
                                     </td>
                                 </tr>
                             ))}
