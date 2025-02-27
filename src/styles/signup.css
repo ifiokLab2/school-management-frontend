@@ -16,7 +16,8 @@
     font-size: .9rem;
 }
 .link-wrapper{
-    color: #7325a3;
+    /*color: #7325a3;*/
+    color: white;
     text-decoration: none;
    
 }
@@ -79,11 +80,13 @@ form .form-header{
 form .form-header i{
     font-size: 1.5rem;
     font-weight: 800;
+    color: white;
 }
 form .form-header span{
     font-size: .8rem;
     font-weight: unset;
     margin: 6px 0;
+    color: white;
    
 }
 
