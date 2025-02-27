@@ -39,12 +39,17 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-image: url('./slider1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
    
 }
 .form-container {
     min-width: 400px;
     margin: 0 auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 30px 20px;
     border-radius: 10px;
 }
