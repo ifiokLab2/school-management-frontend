@@ -73,6 +73,9 @@
 }
 
 
+.organization-form .form-wrapper .form-group div{
+    font-size: .9rem;
+}
 .organization-form .form-wrapper .form-header{
     display: flex;
     align-items: center;
@@ -98,8 +101,14 @@
     position: unset;
     font-size: .8rem;
 }
-.organization-form .form-wrapper .logo-wrapper input{
-    padding: 5px;
+.organization-form .form-wrapper .horizontal-tab{
+    display: flex;
+}
+.organization-form .form-wrapper .horizontal-tab .form-group:nth-child(1){
+    margin-right: 5px;
+}
+.organization-form .form-wrapper  input{
+    padding: 5px !important;
     margin-top: 5px;
 }
 .organization-form .btn-wrapper{
@@ -199,9 +208,12 @@ table .record button{
  .apps-container .cards .icon{
     margin-right: 6px;
 }
+.apps-container .cards .icon i{
+    font-size: 1.6rem;
+}
 
  .apps-container .cards .title-header{
-    font-size: .8rem;
+    font-size: .9rem;
     font-weight: 800;
     margin-bottom: 3px;
     

@@ -22,12 +22,19 @@ import Attendance from './pages/attendance';
 import ParentAttendance from './pages/parent-attendance';
 import ParentChild from './pages/parent-child';
 import AdminSignup from './pages/admin-signup';
+import CreateNotice from './pages/create-notice';
+import PostList from './pages/notice';
+import EditNotice from './pages/edit-notice';
+
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="admin/notice/:id/edit/" element={<EditNotice />} />
+      <Route path="admin/notice/" element={<PostList />} />
+      <Route path="admin/notice/create/" element={<CreateNotice />} />
       <Route path="admin/signup/" element={<AdminSignup />} />
       <Route path="teacher/signup/" element={<TeacherSignup />} />
       <Route path="parent/pupils/" element={<ParentChild />} />

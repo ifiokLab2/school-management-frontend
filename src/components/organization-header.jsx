@@ -9,7 +9,7 @@ import '../styles/organization-header.css';
 
 const OrganizationHeader = ({ toggleSidebar })=>{
     const dispatch = useDispatch();
-    const user = useSelector((state) => state.user);
+    const user = useSelector((state) => state.user.user);
    
 
 
@@ -26,11 +26,13 @@ const OrganizationHeader = ({ toggleSidebar })=>{
             </div>
             <div className='box-b-wrapper'>
                
-               <Link href="/organization/profile/" className='card-box'>
+               <Link to = "" className='card-box'>
                     <div className='icon'>
                         <i className="fa-solid fa-user"></i>
                     </div>
-                    <div className='text'></div>
+                    <div className='text'>
+                        Hi {user?.first_name} {user?.last_name}
+                    </div>
                </Link>
             </div>
         </div>

@@ -11,6 +11,41 @@
     box-shadow: 0 10px 10px -4px rgb(0 0 0 / 12%);
     
 }
+.header-job .header-box-c{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    
+}
+.header-job .header-box-c .text-card span{
+    margin-right: 6px;
+}
+.header-job .header-box-c .text-card{
+    padding: 10px;
+    cursor: pointer;
+}
+
+.header-job .header-box-c .job-link:hover .hover-card{
+    border: dashed;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+}
+.header-job .header-box-c .hover-card{
+    display: none;
+    background-color: white;
+    cursor: pointer;
+}
+.header-job .header-box-c .hover-card a{
+    padding: 10px;
+    text-decoration: none;
+}
+.header-job .header-box-c .hover-card a:hover{
+    background-color: #13293d;
+    color: white;
+}
 .header-job .header-box-a {
     display: flex;
     align-items: center;

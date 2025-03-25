@@ -41,7 +41,7 @@ const AdminLogin = () => {
         try {
             dispatch(setLoading(true));
            
-            const response = await axios.post(`${apiUrl}/admin-login/`, {
+            const response = await axios.post(`${apiUrl}/general/login/`, {
             email,
             password,
             });
@@ -51,7 +51,13 @@ const AdminLogin = () => {
 
                 // Redirect to the home page
                 setTimeout(() => {
-                    navigate('/admin/dashboard/'); // Change '/' to the actual path of your home page
+                    if(response.data.user.isAdmin){
+                        navigate('/admin/dashboard/');
+                    }else{
+                        navigate('/');
+                    }
+                    console.log('data:',response.data.user);
+                    //navigate('/admin/dashboard/'); // Change '/' to the actual path of your home page
                 }, 2000); // 2000 milliseconds (2 seconds) delay
             } else {
                 console.error('Signup failed:',response.data.errors);

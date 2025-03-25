@@ -5,10 +5,10 @@ import { Link , useParams} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import apiUrl from '../components/api-url';
 import Skeleton from "@mui/material/Skeleton";
-import '../styles/signup.css';
+//import '../styles/signup.css';
 import '../styles/organization-dashboard.css';
 import '../styles/repository.css';
-import '../styles/applicant.css';
+//import '../styles/applicant.css';
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import OrganizationHeader from '../components/organization-header';
@@ -30,6 +30,7 @@ const CreateStudents = () => {
     const [parentList, setParentList] = useState([]);
     const [classList, setClassList] = useState([]);
     const [studentList, setStudentList] = useState([]);
+    const[selectedGender,setSelectedGender] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "" });
@@ -126,6 +127,7 @@ const CreateStudents = () => {
             const response = await axios.post(`${apiUrl}/api/student-create/`, {
                 first_name: firstName,
                 last_name:lastName,
+                gender:selectedGender,
                 reg_no:regNumber,
                 school_class:selectedClass,
                 parent_phone_number:phoneNumber,
@@ -142,7 +144,7 @@ const CreateStudents = () => {
             setFormModal(false);  // Close the form modal after successful creation
         } catch (error) {
             setIsLoading(false);
-            setErrorMessage("Error creating class.");
+            setErrorMessage("Error creating student.");
             console.error("Error creating class:", error);
         }
     };
@@ -156,6 +158,7 @@ const CreateStudents = () => {
             const formData = new FormData();
             formData.append('first_name', firstName);
             formData.append('last_name', lastName);
+            formData.append('gender', selectedGender);
             formData.append('reg_no', regNumber);
             formData.append('parent_phone_number', phoneNumber);
             if(selectedParents.length > 0){
@@ -180,7 +183,7 @@ const CreateStudents = () => {
             //setClassName('');
 
             setSelectedParents([]);
-            setFormModal(false);  // Close the form modal after successful creation
+            setEditFormModal(!editFormModal);  // Close the form modal after successful creation
         } catch (error) {
             setIsLoading(false);
             setErrorMessage("Error creating class.");
@@ -269,7 +272,8 @@ const CreateStudents = () => {
                     </div>
                     {errorMessage && <div className="error-message">{errorMessage}</div>}
                     <div className="form-body">
-                    <div className={`form-group ${firstName ? "active":""}`}>
+                        <div className='horizontal-tab'>
+                        <div className={`form-group ${firstName ? "active":""}`}>
                             <div> first Name:</div>
                             <input
                                 type="text"
@@ -289,17 +293,20 @@ const CreateStudents = () => {
                                 required
                             />
                         </div>
-                        <div className={`form-group ${phoneNumber ? "active":""}`}>
-                            <div>Phone Number:</div>
-                            <input
-                                type="text"
-                                id="phone"
-                                value={phoneNumber}
-                                onChange={(e) => setPhoneNumber(e.target.value)}
-                                required
-                            />
                         </div>
-                        <div className={`form-group ${regNumber ? "active":""}`}>
+
+                        <div className='horizontal-tab'>
+                            <div className={`form-group ${phoneNumber ? "active":""}`}>
+                                <div>Parent phone number:</div>
+                                <input
+                                    type="text"
+                                    id="phone"
+                                    value={phoneNumber}
+                                    onChange={(e) => setPhoneNumber(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <div className={`form-group ${regNumber ? "active":""}`}>
                             <div>Reg Number:</div>
                             <input
                                 type="text"
@@ -308,6 +315,27 @@ const CreateStudents = () => {
                                 onChange={(e) => setRegNumber(e.target.value)}
                                 required
                             />
+                        </div>
+                        </div>
+
+                        
+                       
+                        <div className={`form-group ${selectedGender ? 'active' : ""}`}>
+                            <div >Gender:</div>
+                            <select
+                                id="gender"
+                                
+                                value={selectedGender}
+                               onChange = {(e)=>setSelectedGender(e.target.value)}
+                            >
+                                <option value="">Gender</option>
+                                <option value="Male">
+                                    Male
+                                </option>
+                                <option value="Female">
+                                    Female
+                                </option>
+                            </select>
                         </div>
                        
                         <div className={`form-group ${selectedClass ? 'active' : ""}`}>
@@ -361,7 +389,8 @@ const CreateStudents = () => {
                     </div>
                     {errorMessage && <div className="error-message">{errorMessage}</div>}
                     <div className="form-body">
-                    <div className={`form-group ${firstName ? "active":""}`}>
+                        <div className='horizontal-tab'>
+                        <div className={`form-group ${firstName ? "active":""}`}>
                             <div> first Name:</div>
                             <input
                                 type="text"
@@ -381,17 +410,20 @@ const CreateStudents = () => {
                                 required
                             />
                         </div>
-                        <div className={`form-group ${phoneNumber ? "active":""}`}>
-                            <div>Phone Number:</div>
-                            <input
-                                type="text"
-                                id="phone"
-                                value={phoneNumber}
-                                onChange={(e) => setPhoneNumber(e.target.value)}
-                                required
-                            />
                         </div>
-                        <div className={`form-group ${regNumber ? "active":""}`}>
+
+                        <div className='horizontal-tab'>
+                            <div className={`form-group ${phoneNumber ? "active":""}`}>
+                                <div>Parent phone number:</div>
+                                <input
+                                    type="text"
+                                    id="phone"
+                                    value={phoneNumber}
+                                    onChange={(e) => setPhoneNumber(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <div className={`form-group ${regNumber ? "active":""}`}>
                             <div>Reg Number:</div>
                             <input
                                 type="text"
@@ -400,6 +432,27 @@ const CreateStudents = () => {
                                 onChange={(e) => setRegNumber(e.target.value)}
                                 required
                             />
+                        </div>
+                        </div>
+
+                        
+                       
+                        <div className={`form-group ${selectedGender ? 'active' : ""}`}>
+                            <div >Gender:</div>
+                            <select
+                                id="gender"
+                                
+                                value={selectedGender}
+                               onChange = {(e)=>setSelectedGender(e.target.value)}
+                            >
+                                <option value="">Gender</option>
+                                <option value="Male">
+                                    Male
+                                </option>
+                                <option value="Female">
+                                    Female
+                                </option>
+                            </select>
                         </div>
                        
                         <div className={`form-group ${selectedClass ? 'active' : ""}`}>

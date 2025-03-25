@@ -35,7 +35,7 @@ const TeacherLogin = ()=>{
         try {
             dispatch(setLoading(true));
            
-            const response = await axios.post(`${apiUrl}/teacher/login/`, {
+            const response = await axios.post(`${apiUrl}/general/login/`, {
             email,
             password,
             });

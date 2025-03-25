@@ -1,0 +1,20 @@
+
+.repo-form-wrapper{
+   
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.repo-form-wrapper #notice-form{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    background-color: white;
+}
+.repo-form-wrapper #notice-form .form-header i{
+    color: black;
+}
+.repo-form-wrapper #notice-form .form-header span{
+    color: black;
+}

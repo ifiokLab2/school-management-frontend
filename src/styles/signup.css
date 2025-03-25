@@ -102,7 +102,7 @@ form .btn-wrapper button{
     justify-content: center;
 }
   
-input,textarea,select {
+.form-group input,.form-group textarea,.form-group select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;

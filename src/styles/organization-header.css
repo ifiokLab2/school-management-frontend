@@ -16,15 +16,17 @@
 .organization-header .box-a-wrapper{
     display: flex;
     align-items: center;
+    visibility: hidden;
 }
 .organization-header .box-b-wrapper{
     display: flex;
 }
 .organization-header .box-b-wrapper .card-box{
-    padding: 5px 10px;
+   height: 40px;
     text-decoration: none;
     display: flex;  
     color: #2d2f31;
+    
 }
 .organization-header .box-b-wrapper .card-box:hover{
     background-color: #d4d2d0;
@@ -39,11 +41,26 @@
 }
 .organization-header .box-b-wrapper .card-box .icon{
     margin-right: 5px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.organization-header .box-b-wrapper .card-box .icon i{
+    font-size: 1.6rem;
+}
+.organization-header .box-b-wrapper .card-box  .text{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 @media screen and (max-width:992px) {
     .organization-header{
         left: 0;
+    }
+    .organization-header .box-a-wrapper{
+       
+        visibility: visible;
     }
     
 }

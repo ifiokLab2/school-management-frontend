@@ -35,12 +35,83 @@ const Header = ()=>{
                 <div className='menu-btn' onClick={toggleSidebar}>
                     <i className="fa-solid fa-bars"></i>
                 </div>
-                <Link href ='' className='logo'>
+                <Link to ='' className='logo'>
                     Logo
                 </Link>
-                <Link href ='/jobs/' className='job-link'>
-                    Admission
-                </Link>
+                
+                
+           </div>
+           <div className='header-box-c'>
+                <div  className='job-link'>
+                   <div className='text-card'>
+                    <span> About</span>
+                    <i className="fa-solid fa-chevron-down"></i>
+                   </div>
+                   <div className =  'hover-card'>
+                    <Link to = ''>Our story</Link>
+                    <Link to = ''>Philosophy</Link>
+                    <Link to = ''>Mission Statement and core Values</Link>
+                   </div>
+                </div>
+                
+                <div  className='job-link'>
+                   <div className='text-card'>
+                    <span> Admission</span>
+                    <i className="fa-solid fa-chevron-down"></i>
+                   </div>
+                   <div className =  'hover-card'>
+                    <Link to = ''>Academics Overview</Link>
+                    <Link to = ''>Curriculum</Link>
+                    <Link to = ''>Academics Excellence</Link>
+                   </div>
+                </div>
+                <div  className='job-link'>
+                   <div className='text-card'>
+                    <span>Student Life </span>
+                    <i className="fa-solid fa-chevron-down"></i>
+                   </div>
+                   <div className =  'hover-card'>
+                    <Link to = ''>Extracurricular Activities</Link>
+                    <Link to = ''>Religious Activities</Link>
+                   
+                   </div>
+                </div>
+                <div  className='job-link'>
+                   <div className='text-card'>
+                    <span>Admission </span>
+                    <i className="fa-solid fa-chevron-down"></i>
+                   </div>
+                   <div className =  'hover-card'>
+                    <Link to = ''>Admissions Overview</Link>
+                    <Link to = ''>Admission Process</Link>
+                    <Link to = ''>School fees</Link>
+                   
+                   </div>
+                </div>
+                <div  className='job-link'>
+                   <div className='text-card'>
+                    <span>Enrichment </span>
+                    <i className="fa-solid fa-chevron-down"></i>
+                   </div>
+                   <div className =  'hover-card'>
+                    <Link to = ''>Leadership</Link>
+                    <Link to = ''>Innovation Hub</Link>
+                    <Link to = ''>Work experience</Link>
+                   
+                   </div>
+                </div>
+                <div  className='job-link'>
+                   <div className='text-card'>
+                    <span>Information </span>
+                    <i className="fa-solid fa-chevron-down"></i>
+                   </div>
+                   <div className =  'hover-card'>
+                    <Link to = ''>News & Event</Link>
+                    <Link to = ''>Newsletter</Link>
+                    <Link to = ''>Work experience</Link>
+                   
+                   </div>
+                </div>
                 
            </div>
            <div className='header-box-b'>
@@ -52,7 +123,7 @@ const Header = ()=>{
                             {user?.email}
                         </div>
                         
-                        <Link  href = '' className='profile-tabs'>
+                        <Link  to = '' className='profile-tabs'>
                             <i className="fa-solid fa-circle-question"></i>
                             <span>Help center</span>
                         </Link>
@@ -84,7 +155,7 @@ const Header = ()=>{
                 <div className='side-body'>
                     <div className='title'></div>
                     <div className='link-btn'>
-                        <Link href ='' >
+                        <Link to ='' >
                             <div className='text'>J</div>
                             <div className='icon'>
                                 <i className="fa-solid fa-chevron-right"></i>

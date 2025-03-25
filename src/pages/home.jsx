@@ -31,7 +31,7 @@ export default function Home() {
               spaceBetween={30}
               slidesPerView={1}
               pagination={{ clickable: true }}
-              autoplay={{ delay: 500 }}
+              autoplay={{ delay: 3500 }}
               modules={[Autoplay, Pagination, Navigation]}
               >
               {slides.map((slide, index) => (
@@ -44,7 +44,10 @@ export default function Home() {
                   </SwiperSlide>
               ))}
           </Swiper>
-                
+          <div className = "hero-text-wrapper">
+            <h2>UST INTERNATIONAL SCHOOL</h2>
+            <p>Honesty, Service and Honour</p>
+          </div>
         </div>
         
         <div className = "offer-wrapper">
@@ -109,9 +112,9 @@ export default function Home() {
             <div className = "text">Programmes</div>
           </div>
         </div>
-       </div>
 
-       <div className = "activity-wrapper">
+
+        <div className = "activity-wrapper">
           <div className = "container-1">
             <h1>Extracurricular Activities</h1>
           </div>
@@ -138,6 +141,135 @@ export default function Home() {
             </div>
           </div>
        </div>
+
+       <div className="testimonial-container">
+          <h2 className="testimonial-heading">Parents Testimonial</h2>
+
+          <div className="testimonial-cards">
+            {/* Yellow Card */}
+            <div className="testimonial-card yellow">
+              <div className="testimonial-content">
+                <p className="testimonial-text">
+                  "Enrolling my child at Olashore School was the best decision. The school's commitment to excellence,
+                  combined with a nurturing environment, has significantly shaped my child's growth and academic success.
+                  I'm impressed!"
+                </p>
+              </div>
+              <div className="testimonial-author">
+                <p>Mrs. Ngozi Adeyemi</p>
+              </div>
+            </div>
+
+            {/* Blue Card */}
+            <div className="testimonial-card blue">
+              <div className="testimonial-content">
+                <p className="testimonial-text">
+                  "Choosing Olashore School for my child was a game-changer. The school's holistic approach to education and
+                  the dedicated faculty have fostered not just academic growth but also personal development. Kudos to
+                  Olashore!"
+                </p>
+              </div>
+              <div className="testimonial-author">
+                <p>Mr. Emeka Okafor</p>
+              </div>
+            </div>
+
+            {/* Green Card */}
+            <div className="testimonial-card green">
+              <div className="testimonial-content">
+                <p className="testimonial-text">
+                  "I'm delighted with the progress my child has made at Olashore School. The supportive community,
+                  comprehensive curriculum, and various extracurricular activities have contributed immensely to my child's
+                  all-around development."
+                </p>
+              </div>
+              <div className="testimonial-author">
+                <p>Mrs. Tolu Abubakar</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="about-container">
+          <div className="about-content">
+            <div className="about-text">
+              <h2 className="about-heading">About Us</h2>
+
+              <p className="about-paragraph">
+                Olashore International School is a co-educational boarding school founded in 1994, located on a 60-hectare
+                campus three hours from Lagos. It provides an international education with a focus on traditional Nigerian
+                values. The school attracts students from both Nigeria and abroad, particularly from the US and UK, offering
+                a disciplined boarding environment that nurtures academic and personal growth.
+              </p>
+
+              <p className="about-paragraph">
+                The school emphasizes holistic development, offering a strong academic curriculum alongside extracurricular
+                activities such as sports, performing arts, public speaking, and leadership programs. Students also engage
+                in community projects and participate in the Duke of Edinburgh Award scheme. The school has its own farm,
+                where students cultivate crops and learn practical skills.
+              </p>
+
+              <p className="about-paragraph">
+                Olashore's curriculum blends the Nigerian and British systems, preparing students for Cambridge IGCSE, West
+                African Senior Secondary Certificate Examinations, and other exams like SAT, JAMB, and IELTS. The use of
+                technology is integral to learning, with all students provided an iPad for academic activities. Since
+                joining the Council of British International Schools in 2016, Olashore has earned several awards, including
+                British Council Awards for IGCSE performance and the Diana Awards for community service. The school
+                continues to uphold high standards in both academic excellence and community involvement.
+              </p>
+
+              <h2 className="about-heading">Mission Statement</h2>
+
+              <p className="about-paragraph">
+                Olashore International School is a learning community committed to academic excellence, nurturing each child
+                to their full potential in a safe a serene environment, developing leaders for the dynamic global society in
+                the 21st century.
+              </p>
+            </div>
+
+            <div className="about-image">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/about-4.PNG-FBSAznAgiYouQxReUIqC3oxkLYa1r9.png"
+                alt="Olashore International School students in uniform"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="footer-cta">
+        {/* Yellow Call-to-Action Section */}
+        <div className="cta-section">
+          <div className="container">
+            <div className="cta-content">
+              <h2 className="cta-heading">Enroll your Child Today!</h2>
+              <div className="cta-buttons">
+                <Link to="#" className="cta-button">
+                  APPLY FOR ADMISSION
+                </Link>
+                <Link to="#" className="cta-button">
+                  SCHEDULE A VISIT
+                </Link>
+                <Link to="#" className="cta-button">
+                  DOWNLOAD BROCHURE
+                </Link>
+                <Link to="#" className="cta-button">
+                  REQUEST A PROSPECTUS
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      {/* Main Footer Section */}
+      
+        </div>
+
+
+
+       </div>
+
+      
+
+
        <Footer />
     </>
     

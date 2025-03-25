@@ -32,6 +32,30 @@
 .organization-sidebar .tabs .main-link{
     display: flex;
     justify-content: flex-start;
+    
+    color: white;
+    margin: 4px 0;
+    
+}
+.organization-sidebar .main-link.active-link{
+    background-color: white;
+}
+.organization-sidebar .main-link a{
+    color:white;
+    text-decoration: none;
+    padding: 10px 5px;
+}
+.organization-sidebar .main-link:hover{
+    background-color: white;
+
+}
+.organization-sidebar .main-link:hover a{
+    color: #000;
+    
+}
+.organization-sidebar .main-link.active-link a{
+    text-decoration: none;
+    color: #000;
 }
 .organization-sidebar .tabs{
     display: flex;
@@ -63,6 +87,7 @@
     font-size: 1.2rem;
     color: white;
     cursor: pointer;
+    display: none;
 }
 
 .organization-sidebar .icon.show{
@@ -75,6 +100,10 @@
 @media screen and (max-width:992px) {
     .organization-sidebar{
         display: none;
+    }
+    .organization-sidebar .header-tab .icon{
+      
+        display: flex;
     }
     .organization-sidebar.visible{
         display: flex;
