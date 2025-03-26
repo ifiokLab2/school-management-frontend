@@ -8,27 +8,7 @@ const Footer = ()=>{
         <>
             <footer className="footer">
       {/* Yellow Call-to-Action Section */}
-      <div className="cta-section">
-        <div className="container">
-          <div className="cta-content">
-            <h2 className="cta-heading">Enroll your Child Today!</h2>
-            <div className="cta-buttons">
-              <Link to="#" className="cta-button">
-                APPLY FOR ADMISSION
-              </Link>
-              <Link to="#" className="cta-button">
-                SCHEDULE A VISIT
-              </Link>
-              <Link to="#" className="cta-button">
-                DOWNLOAD BROCHURE
-              </Link>
-              <Link to="#" className="cta-button">
-                REQUEST A PROSPECTUS
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
+     
 
       {/* Main Footer Section */}
       <div className="main-footer">

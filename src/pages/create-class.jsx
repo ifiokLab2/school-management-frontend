@@ -197,7 +197,7 @@ const CreateClass = () => {
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Grade</th>
+                                <th>Class</th>
                                 <th>Teachers</th>
                                 <th>Actions</th>
                             </tr>
@@ -212,8 +212,8 @@ const CreateClass = () => {
                                     <td>{schoolClass.teachers.join(', ')}</td>
                                     <td>
                                         {/* admin should be able to delete or edit classes,can you provide updated code */}
-                                        <button onClick={()=>toggleDeleteForm(schoolClass.id)}>delete</button>
-                                        <button onClick = {()=>toggleEditForm(schoolClass.id,schoolClass.name,schoolClass.grade)}>Edit</button>
+                                        <button className = "delete" onClick={()=>toggleDeleteForm(schoolClass.id)}>delete</button>
+                                        <button className = "edit-btn" onClick = {()=>toggleEditForm(schoolClass.id,schoolClass.name,schoolClass.grade)}>Edit</button>
                                     </td>
                                 </tr>
                             ))}
@@ -226,7 +226,7 @@ const CreateClass = () => {
             <form className={`organization-form ${formModal ? 'show' : ''}`} onSubmit={handleSubmit}>
                 <div className="form-wrapper">
                     <div className="form-header-x">
-                        <div className="title">Create School Class</div>
+                        <div className="title">Create Class</div>
                         <div className="icon" onClick={toggleForm}>
                             <i className="fa-solid fa-circle-xmark"></i>
                         </div>

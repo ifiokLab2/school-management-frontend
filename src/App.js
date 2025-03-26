@@ -25,13 +25,14 @@ import AdminSignup from './pages/admin-signup';
 import CreateNotice from './pages/create-notice';
 import PostList from './pages/notice';
 import EditNotice from './pages/edit-notice';
-
+import TeacherList from './pages/teacher-list';
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="admin/teachers/" element={<TeacherList  />} />
       <Route path="admin/notice/:id/edit/" element={<EditNotice />} />
       <Route path="admin/notice/" element={<PostList />} />
       <Route path="admin/notice/create/" element={<CreateNotice />} />

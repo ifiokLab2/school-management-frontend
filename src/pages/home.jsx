@@ -11,6 +11,7 @@ import { Swiper, SwiperSlide, } from 'swiper/react';
 import { Autoplay,Pagination,Navigation } from 'swiper/modules';
 import Header from '../components/header';
 import "../styles/home.css";
+import image_file from '../styles/file_m.jpg';
 import Footer from "../components/footer";
 import { Link , useParams} from 'react-router-dom';
 
@@ -228,7 +229,7 @@ export default function Home() {
 
             <div className="about-image">
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/about-4.PNG-FBSAznAgiYouQxReUIqC3oxkLYa1r9.png"
+                src={image_file}
                 alt="Olashore International School students in uniform"
               />
             </div>

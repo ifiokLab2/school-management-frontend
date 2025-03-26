@@ -57,16 +57,16 @@ const OrganizationSidebar = ({ className, toggleSidebar }) => {
           <div className="tabs">
             <div className="main-link">
               <div className="icon">{/* icon */}</div>
-              <div className="text">Dashboard</div>
+              <div className="text">
+                  <Link
+                  to="/teacher/manage/attendance/"
+                  className={location.pathname === "/teacher/manage/attendance/" ? "active-link" : ""}
+                >
+                  Manage Attendance
+                </Link>
+              </div>
             </div>
-            <div className="sub-links">
-              <Link
-                to="/teacher/manage/attendance/"
-                className={location.pathname === "/teacher/manage/attendance/" ? "active-link" : ""}
-              >
-                Manage Attendance
-              </Link>
-            </div>
+            
           </div>
         )}
 
@@ -74,16 +74,16 @@ const OrganizationSidebar = ({ className, toggleSidebar }) => {
           <div className="tabs">
             <div className="main-link">
               <div className="icon">{/* icon */}</div>
-              <div className="text">Dashboard</div>
-            </div>
-            <div className="sub-links">
-              <Link
+              <div className="text">
+                <Link
                 to="/parent/pupils/"
                 className={location.pathname === "/parent/pupils/" ? "active-link" : ""}
               >
                 Child Attendance
               </Link>
             </div>
+            </div>
+            
           </div>
         )}
       </div>

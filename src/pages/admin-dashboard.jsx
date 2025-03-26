@@ -327,7 +327,7 @@ const AdminDashboard = ()=>{
                         </div>
                         
                         <div className="box-2">
-                            <Card sx={{ maxWidth: "100%", mx: "auto", mt: 4, p: 2 }}>
+                            <Card sx={{ maxWidth: "100%", mx: "auto", mt: 4, p: 2,bgcolor: "#f5f5f5" }}>
                                 <CardContent>
                                     <Typography variant="h6" gutterBottom>
                                     Select a Date
