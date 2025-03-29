@@ -151,7 +151,7 @@ export default function Home() {
             <div className="testimonial-card yellow">
               <div className="testimonial-content">
                 <p className="testimonial-text">
-                  "Enrolling my child at Olashore School was the best decision. The school's commitment to excellence,
+                  "Enrolling my child at UST School was the best decision. The school's commitment to excellence,
                   combined with a nurturing environment, has significantly shaped my child's growth and academic success.
                   I'm impressed!"
                 </p>
@@ -165,9 +165,9 @@ export default function Home() {
             <div className="testimonial-card blue">
               <div className="testimonial-content">
                 <p className="testimonial-text">
-                  "Choosing Olashore School for my child was a game-changer. The school's holistic approach to education and
+                  "Choosing UST School for my child was a game-changer. The school's holistic approach to education and
                   the dedicated faculty have fostered not just academic growth but also personal development. Kudos to
-                  Olashore!"
+                  UST!"
                 </p>
               </div>
               <div className="testimonial-author">
@@ -179,7 +179,7 @@ export default function Home() {
             <div className="testimonial-card green">
               <div className="testimonial-content">
                 <p className="testimonial-text">
-                  "I'm delighted with the progress my child has made at Olashore School. The supportive community,
+                  "I'm delighted with the progress my child has made at UST School. The supportive community,
                   comprehensive curriculum, and various extracurricular activities have contributed immensely to my child's
                   all-around development."
                 </p>
@@ -196,7 +196,7 @@ export default function Home() {
               <h2 className="about-heading">About Us</h2>
 
               <p className="about-paragraph">
-                Olashore International School is a co-educational boarding school founded in 1994, located on a 60-hectare
+                UST International School is a co-educational boarding school founded in 1994, located on a 60-hectare
                 campus three hours from Lagos. It provides an international education with a focus on traditional Nigerian
                 values. The school attracts students from both Nigeria and abroad, particularly from the US and UK, offering
                 a disciplined boarding environment that nurtures academic and personal growth.
@@ -210,10 +210,10 @@ export default function Home() {
               </p>
 
               <p className="about-paragraph">
-                Olashore's curriculum blends the Nigerian and British systems, preparing students for Cambridge IGCSE, West
+                UST's curriculum blends the Nigerian and British systems, preparing students for Cambridge IGCSE, West
                 African Senior Secondary Certificate Examinations, and other exams like SAT, JAMB, and IELTS. The use of
                 technology is integral to learning, with all students provided an iPad for academic activities. Since
-                joining the Council of British International Schools in 2016, Olashore has earned several awards, including
+                joining the Council of British International Schools in 2016, UST has earned several awards, including
                 British Council Awards for IGCSE performance and the Diana Awards for community service. The school
                 continues to uphold high standards in both academic excellence and community involvement.
               </p>
@@ -221,7 +221,7 @@ export default function Home() {
               <h2 className="about-heading">Mission Statement</h2>
 
               <p className="about-paragraph">
-                Olashore International School is a learning community committed to academic excellence, nurturing each child
+                UST International School is a learning community committed to academic excellence, nurturing each child
                 to their full potential in a safe a serene environment, developing leaders for the dynamic global society in
                 the 21st century.
               </p>
@@ -230,7 +230,7 @@ export default function Home() {
             <div className="about-image">
               <img
                 src={image_file}
-                alt="Olashore International School students in uniform"
+                alt="UST International School students in uniform"
               />
             </div>
           </div>

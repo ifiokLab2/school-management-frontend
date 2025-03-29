@@ -49,14 +49,18 @@ const AdminLogin = () => {
             if (response.data.success) {
                 dispatch(setUser(response.data.user));
 
-                // Redirect to the home page
+                // Redirect to the home page /teacher/manage/attendance/
                 setTimeout(() => {
                     if(response.data.user.isAdmin){
                         navigate('/admin/dashboard/');
-                    }else{
-                        navigate('/');
                     }
-                    console.log('data:',response.data.user);
+                    if (response.data.user.isTeacher){
+                        navigate('/teacher/manage/attendance/');
+                    }
+                    if (response.data.user.isParent){
+                        navigate('/parent/pupils/');
+                    }
+                    //console.log('data:',response.data.user);
                     //navigate('/admin/dashboard/'); // Change '/' to the actual path of your home page
                 }, 2000); // 2000 milliseconds (2 seconds) delay
             } else {

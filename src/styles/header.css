@@ -12,7 +12,7 @@
     
 }
 .header-job .header-box-c{
-    width: 70%;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -21,6 +21,7 @@
 }
 .header-job .header-box-c .text-card span{
     margin-right: 6px;
+    font-size: .9rem;
 }
 .header-job .header-box-c .text-card{
     padding: 10px;
@@ -161,12 +162,10 @@
    
 }
 
-@media screen and (max-width:799px){
-    .header-job .header-box-a .job-link,.header-job .header-box-a .courses-link{
+@media screen and (max-width:1024px){
+    .header-job .header-box-c{
         display: none;
-    }
-    .header-job .header-box-b .job-link,.header-job .header-box-b .login-link{
-        display: none;
+        
     }
     .header-job .menu-btn{
         display: block;
@@ -267,6 +266,16 @@
         margin-right: 10px;
        
     }
+}
+@media screen and (max-width:799px){
+    
+    .header-job .header-box-a .job-link,.header-job .header-box-a .courses-link{
+        display: none;
+    }
+    .header-job .header-box-b .job-link,.header-job .header-box-b .login-link{
+        display: none;
+    }
+  
     .hero-container .dream-container{
         display: none;
        

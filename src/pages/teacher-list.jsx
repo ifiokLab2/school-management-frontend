@@ -23,7 +23,7 @@ const  TeacherList = ()=>{
 
     const fetchTeachers = async () => {
         try {
-          const response = await axios.get("http://127.0.0.1:8000/teachers/", {
+          const response = await axios.get(`${apiUrl}/teachers/`, {
             headers: {
               //Authorization: `Bearer ${localStorage.getItem("token")}`, // Ensure user is authenticated
             },

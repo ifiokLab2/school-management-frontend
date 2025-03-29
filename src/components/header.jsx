@@ -35,7 +35,7 @@ const Header = ()=>{
                 <div className='menu-btn' onClick={toggleSidebar}>
                     <i className="fa-solid fa-bars"></i>
                 </div>
-                <Link to ='' className='logo'>
+                <Link to ='/' className='logo'>
                     Logo
                 </Link>
                 
@@ -131,10 +131,10 @@ const Header = ()=>{
                 </div>
                 {user? (
                     <div onClick={handleLogout} className='login-link'>
-                    Logout
-                </div>
+                        Logout
+                    </div>
                 ):(
-                    <Link to ='/teacher/login/' className='login-link'>
+                    <Link to ='/admin/login/' className='login-link'>
                         Login
                     </Link>
                 )}
@@ -145,23 +145,87 @@ const Header = ()=>{
             <div className={`sideBar ${sidebarOpen ? 'show':''}`}>
             <div className='sidebar-wrapper'>
                 <div className = 'auth-tab' >
-                <div className='auth-wrapper'>
-                        <Link to='/teacher/login/'>Login</Link>
+               {user? (
+                    <div className='auth-wrapper'>
+                    <Link to='/admin/login/'>Login</Link>
                 </div>
-                <div className='auth-wrapper'>
-                        <Link to =''></Link>
-                </div>
+               ):(
+                    <div className='auth-wrapper'>
+                        <div onClick = {handleLogout} >logouut</div>
+                    </div>
+               )}
+               
                 </div>
                 <div className='side-body'>
                     <div className='title'></div>
                     <div className='link-btn'>
                         <Link to ='' >
-                            <div className='text'>J</div>
+                            <div className='text'>Academics Overvieww</div>
                             <div className='icon'>
                                 <i className="fa-solid fa-chevron-right"></i>
                             </div>
                         </Link>  
                     </div>
+
+                    <div className='link-btn'>
+                        <Link to ='' >
+                            <div className='text'>Curriculum</div>
+                            <div className='icon'>
+                                <i className="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </Link>  
+                    </div>
+                    <div className='link-btn'>
+                        <Link to ='' >
+                            <div className='text'>Extra curricular activities</div>
+                            <div className='icon'>
+                                <i className="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </Link>  
+                    </div>
+
+                    <div className='link-btn'>
+                        <Link to ='' >
+                            <div className='text'>Religious Activties</div>
+                            <div className='icon'>
+                                <i className="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </Link>  
+                    </div>
+                    <div className='link-btn'>
+                        <Link to ='' >
+                            <div className='text'>Admission Overview</div>
+                            <div className='icon'>
+                                <i className="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </Link>  
+                    </div>
+                    
+                    <div className='link-btn'>
+                        <Link to ='' >
+                            <div className='text'>Innovation Hub</div>
+                            <div className='icon'>
+                                <i className="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </Link>  
+                    </div>
+                    <div className='link-btn'>
+                        <Link to ='' >
+                            <div className='text'>News & Event</div>
+                            <div className='icon'>
+                                <i className="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </Link>  
+                    </div>
+                    <div className='link-btn'>
+                        <Link to ='' >
+                            <div className='text'>Work Experience</div>
+                            <div className='icon'>
+                                <i className="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </Link>  
+                    </div>
+
                     
                     
                 </div>
