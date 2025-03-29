@@ -330,7 +330,7 @@ const AdminDashboard = ()=>{
                             <Card sx={{ maxWidth: "100%", mx: "auto", mt: 4, p: 2,bgcolor: "#f5f5f5" }}>
                                 <CardContent>
                                     <Typography variant="h6" gutterBottom>
-                                    Select a Date
+                                    Calendar
                                     </Typography>
                                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                                     <DateCalendar value={selectedDate} onChange={setSelectedDate} />

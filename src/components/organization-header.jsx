@@ -31,7 +31,7 @@ const OrganizationHeader = ({ toggleSidebar })=>{
                         <i className="fa-solid fa-user"></i>
                     </div>
                     <div className='text'>
-                        Hi {user?.first_name} {user?.last_name}
+                        Hi {user?.first_name}
                     </div>
                </Link>
             </div>

@@ -62,7 +62,7 @@ const OrganizationSidebar = ({ className, toggleSidebar }) => {
                   to="/teacher/manage/attendance/"
                   className={location.pathname === "/teacher/manage/attendance/" ? "active-link" : ""}
                 >
-                  Manage Attendance
+                  Classs
                 </Link>
               </div>
             </div>

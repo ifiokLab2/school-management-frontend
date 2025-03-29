@@ -64,7 +64,7 @@ const ParentChild = ()=>{
                       {classList.map((data)=>(
                         <Link key={data.id} to = {`/parent/attendance/${data.school_class}/class/${data.id}/child/`} className='cards organization-card' >
                         <div className='icon hrms-icon'>
-                            <i className='fa-solid fa-file'></i>
+                            <i className='fa-solid fa-user'></i>
                         </div>
                         <div className='text-wrapper'>
                             <div className='title-header'>{data.first_name} {data.last_name}</div>

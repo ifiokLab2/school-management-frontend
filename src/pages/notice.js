@@ -69,7 +69,7 @@ const PostList = () => {
     fetchPosts();
   }, [user]);
 
-  if (loading) return <p>Loading posts...</p>;
+
 
   return (
     <div class = 'home-wrapper'>
