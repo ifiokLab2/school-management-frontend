@@ -43,7 +43,7 @@ function App() {
       <Route path="teacher/attendance/:classId/class/" element={<Attendance />} />
       <Route path="teacher/manage/attendance/" element={<TeacherClasses />} />
       <Route path="teacher/login/" element={<TeacherLogin />} />
-      <Route path="admin/login/" element={<AdminLogin />} />
+      <Route path="login/" element={<AdminLogin />} />
       <Route path="parent/login/" element={<ParentLogin />} />
       <Route path="parent/signup/" element={<ParentSignup />} />
       <Route path="teacher/dashboard/" element={<TeacherDashboard />} />

@@ -23,7 +23,7 @@ const Header = ()=>{
     }
     const handleLogout =() => {
         dispatch(setUser(null));
-        navigate('/');
+        navigate('/login/');
       };
     
    
@@ -123,10 +123,27 @@ const Header = ()=>{
                             {user?.email}
                         </div>
                         
-                        <Link  to = '' className='profile-tabs'>
-                            <i className="fa-solid fa-circle-question"></i>
-                            <span>Help center</span>
-                        </Link>
+                        {user ? (
+                            <>
+                                <div onClick = {handleLogout}   className='profile-tabs'>
+                                    
+                                    <span>Logout</span>
+                                </div>
+                            </>
+                        ):(
+                            <>
+                                <Link  to = '/login/' className='profile-tabs'>
+                                   
+                                    <span>Login</span>
+                                </Link>
+                                <Link  to = '' className='profile-tabs'>
+                                    
+                                    <span>Signup</span>
+                                </Link>
+                            </>
+                        )}
+
+
                     </div>
                 </div>
                 {user? (
@@ -134,7 +151,7 @@ const Header = ()=>{
                         Logout
                     </div>
                 ):(
-                    <Link to ='/admin/login/' className='login-link'>
+                    <Link to ='/login/' className='login-link'>
                         Login
                     </Link>
                 )}
@@ -147,7 +164,7 @@ const Header = ()=>{
                 <div className = 'auth-tab' >
                {user? (
                     <div className='auth-wrapper'>
-                    <Link to='/admin/login/'>Login</Link>
+                    <Link to='/login/'>Login</Link>
                 </div>
                ):(
                     <div className='auth-wrapper'>

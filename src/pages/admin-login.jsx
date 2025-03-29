@@ -98,7 +98,7 @@ const AdminLogin = () => {
                 <form className="form-container" onSubmit={handleSubmit}>
                     <div className="form-header">
                         <i className="fa-solid fa-user"></i>
-                        <span>Admin Login</span>
+                        <span>Login</span>
                     </div>
                     {errorMessage && <div className="error-message">{errorMessage}</div>}
                     <div className={`form-group ${email ? 'active' : ''}`}>
@@ -125,6 +125,10 @@ const AdminLogin = () => {
                             {isLoading && <div className="loader"></div>}
                         </button>
                     </div>
+                    <Link to ='/admin/signup/' className='link-wrapper'>admin Signup(only for test ,removed later*)</Link><br />
+                    <Link to ='/teacher/signup/' className='link-wrapper'>Teacher Signup</Link><br />
+                    <Link to ='/parent/signup/' className='link-wrapper'>Parent Signup</Link><br />
+                    
                 </form>
             </div>
         </div>

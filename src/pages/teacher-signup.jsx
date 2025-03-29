@@ -63,7 +63,7 @@ const Signup = ()=>{
 
                 // Redirect to the home page
                 setTimeout(() => {
-                    navigate('/'); // Change '/' to the actual path of your home page
+                    navigate('/teacher/manage/attendance/'); // Change '/' to the actual path of your home page
                 }, 2000); // 2000 milliseconds (2 seconds) delay
             } else {
                 console.error('Signup failed:',response.data.errors);
@@ -149,7 +149,7 @@ const Signup = ()=>{
                             
                         </button>
                     </div>
-                    <Link to ='/teacher/login/' className='link-wrapper'>Login</Link><br />
+                    <Link to ='/login/' className='link-wrapper'>Login</Link><br />
                    
                 </form>
             </div>

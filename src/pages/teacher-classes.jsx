@@ -23,6 +23,7 @@ const TeacherClasses = ()=>{
     };
 
     const fetchClasses = async () => {
+        setLoading(true);
         try {
             const response = await axios.get(`${apiUrl}/api/teacher-classes/`,{
                 headers: {
@@ -31,9 +32,11 @@ const TeacherClasses = ()=>{
                 },
             }); // Adjust the endpoint to match your backend
             setClassList(response.data);
+            setLoading(false);
             setErrorMessage("");
             console.log('response.data:',response.data);
         } catch (error) {
+            setLoading(false);
             console.error("Error fetching teachers", error);
             setErrorMessage("Error fetching teacher list.");
         }
@@ -61,24 +64,35 @@ const TeacherClasses = ()=>{
                 </div>
                 
                 <div className='apps-container'>
-                      {classList.map((data)=>(
-                        <Link key={data.id} to = {`/teacher/attendance/${data.id}/class/`} className='cards organization-card' >
-                        <div className='icon hrms-icon'>
-                            <i className='fa-solid fa-file'></i>
-                        </div>
-                        <div className='text-wrapper'>
-                            <div className='title-header'>{data.name}</div>
-                            <p>{data.grade}</p>
-                            <div className='employee-count'>
+                      {loading ? (
+                        <p>Loading..</p>
+                      ):(
+                        <>
+                            {classList.length > 0 ? (
+                        <>{classList.map((data)=>(
+                            <Link key={data.id} to = {`/teacher/attendance/${data.id}/class/`} className='cards organization-card' >
+                            <div className='icon hrms-icon'>
+                                <i className='fa-solid fa-file'></i>
+                            </div>
+                            <div className='text-wrapper'>
+                                <div className='title-header'>{data.name}</div>
+                                <p>{data.grade}</p>
+                                <div className='employee-count'>
+                                    
+                            
+                                </div>
                                 
-                        
+                                
                             </div>
                             
-                            
-                        </div>
-                        
-                        </Link>
-                      ))}     
+                            </Link>
+                          ))} 
+                          </>
+                      ):(
+                        <p>No class has been assigned to you yet</p>
+                      )} 
+                        </>
+                      )}   
                         
                             
                            

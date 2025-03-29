@@ -278,19 +278,19 @@ body{
 }
 
 .activity-wrapper .container-2{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+    
 }
 
 .activity-wrapper .container-2 .cards{
     position: relative;
-    margin: 10px;
+    
 }
 .activity-wrapper .container-2 .cards img{
-  height: 220px;
-  width: auto;
+  height: auto;
+  width: 100%;
 }
 
 .activity-wrapper .container-2 .cards .wrapper{

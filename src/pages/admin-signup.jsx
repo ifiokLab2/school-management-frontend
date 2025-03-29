@@ -111,7 +111,7 @@ const AdminSignup = ()=>{
                 <form className="form-container" onSubmit={handleSubmit}>
                     <div className='form-header'>
                     <FontAwesomeIcon icon={faUser} size="1x" color="black" />
-                        <span>Teacher signup</span>
+                        <span>Admin signup</span>
                         
                     </div>
                     {errorMessage && <div className="error-message">{errorMessage}</div>}

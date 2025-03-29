@@ -148,7 +148,7 @@ const ParentSignup = ()=>{
                             
                         </button>
                     </div>
-                    <Link href ='/teacher/login/' className='link-wrapper'>Login</Link><br />
+                    <Link to ='/login/' className='link-wrapper'>Login</Link><br />
                    
                 </form>
             </div>
