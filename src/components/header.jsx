@@ -136,10 +136,7 @@ const Header = ()=>{
                                    
                                     <span>Login</span>
                                 </Link>
-                                <Link  to = '' className='profile-tabs'>
-                                    
-                                    <span>Signup</span>
-                                </Link>
+                               
                             </>
                         )}
 
@@ -162,13 +159,13 @@ const Header = ()=>{
             <div className={`sideBar ${sidebarOpen ? 'show':''}`}>
             <div className='sidebar-wrapper'>
                 <div className = 'auth-tab' >
-               {user? (
+               {user === null ? (
                     <div className='auth-wrapper'>
                     <Link to='/login/'>Login</Link>
                 </div>
                ):(
-                    <div className='auth-wrapper'>
-                        <div onClick = {handleLogout} >logouut</div>
+                    <div onClick = {handleLogout} className='auth-wrapper'>
+                        <div  >logout</div>
                     </div>
                )}
                
