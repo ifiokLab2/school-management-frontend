@@ -71,20 +71,34 @@ const OrganizationSidebar = ({ className, toggleSidebar }) => {
         )}
 
         {user?.isParent && (
-          <div className="tabs">
+          <>
+            <div className="tabs">
             <div className="main-link">
               <div className="icon">{/* icon */}</div>
-              <div className="text">
-                <Link
-                to="/parent/pupils/"
-                className={location.pathname === "/parent/pupils/" ? "active-link" : ""}
-              >
-                Child Attendance
-              </Link>
+                  <div className="text">
+                    <Link
+                    to="/parent/pupils/"
+                    className={location.pathname === "/parent/pupils/" ? "active-link" : ""}
+                  >
+                    Child Attendance
+                  </Link>
+                </div>
             </div>
+
+            <div className="main-link">
+              <div className="icon">{/* icon */}</div>
+                  <div className="text">
+                    <Link
+                    to="/pay/fees/"
+                    className={location.pathname === "/pay/fees/" ? "active-link" : ""}
+                  >
+                    pay Fees
+                  </Link>
+                </div>
             </div>
             
           </div>
+          </>
         )}
       </div>
 

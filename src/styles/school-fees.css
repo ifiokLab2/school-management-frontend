@@ -1,0 +1,60 @@
+.fee-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+ .fee-wrapper .fee-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 25px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fafafa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+ .fee-wrapper .fee-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+ .fee-wrapper .fee-form label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    
+    position:unset;
+  }
+  
+  .fee-form input,
+  .fee-form select {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #aaa;
+  }
+  
+  .fee-form button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    background-color: #0078e7;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .fee-form .box-tab{
+    margin-bottom:10px;
+  }
+  
+  .fee-form button:hover {
+    background-color: #005dc1;
+  }
+  
+  
+  
