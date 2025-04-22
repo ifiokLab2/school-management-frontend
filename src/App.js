@@ -27,12 +27,35 @@ import PostList from './pages/notice';
 import EditNotice from './pages/edit-notice';
 import TeacherList from './pages/teacher-list';
 import SchoolFees from './pages/school-fees';
+import Subject from './pages/subject';
+import AddResult from './pages/add-result';
+import StudentResult from './pages/student-result';
+import UpdateResult from './pages/update-result';
+import SchoolMission from './pages/school-mission';
+import AcademicOverview from './pages/academic-overview';
+import Curriculum from './pages/curriculum';
+import AdmissionProcess  from './pages/admission-process';
+import PublicSpeaking  from './pages/public-speaking';
+import News  from './pages/news';
+import NewsDetail  from './pages/news-detail';
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="news-detail/:Id/post/" element={<NewsDetail />} />
+     
+      <Route path="news/" element={<News />} />
+      <Route path="public-speaking/" element={<PublicSpeaking />} />
+      <Route path="admission-process/" element={<AdmissionProcess />} />
+      <Route path="curriculum/" element={<Curriculum />} />
+      <Route path="academic-overview/" element={<AcademicOverview />} />
+      <Route path="school-mission/" element={<SchoolMission />} />
+      <Route path="student/:studentId/result/" element={<StudentResult />} />
+      <Route path="update/:studentId/result/" element={<UpdateResult />} />
+      <Route path="admin/add/:studentId/result/" element={<AddResult />} />
+      <Route path="admin/subject/" element={<Subject />} />
       <Route path="pay/fees/" element={<SchoolFees />} />
       <Route path="admin/teachers/" element={<TeacherList  />} />
       <Route path="admin/notice/:id/edit/" element={<EditNotice />} />

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import hero3 from '../styles/hero-3.jpg';
 import { Link , useParams} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import apiUrl from '../components/api-url';
@@ -84,7 +85,7 @@ const PostList = () => {
             <div class = 'org'>
                 
             </div>
-            <Link to ='admin/notice/create/' className = "create-btn">Post</Link>
+            <Link to ="/admin/notice/create/" className = "create-btn">Post</Link>
         </div>
             
            <div className = 'admin-wrapper'>
@@ -110,7 +111,7 @@ const PostList = () => {
                             )}
                             </div>
                         </div>
-                        {post.image && <img src={post.image} alt={post.title} className="post-image" />}
+                        {post.image && <img src={hero3} alt={post.title} className="post-image" />}
                         <p className="post-description">{post.description}</p>
                         <p className="post-meta">Created by User ID: {post.created_by} on {post.date}</p>
                         </div>

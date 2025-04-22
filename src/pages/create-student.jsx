@@ -237,6 +237,7 @@ const CreateStudents = () => {
                                 <th>Parent</th>
                                 <th>Class</th>
                                  <th>Parent Phone</th>
+                                 <th>Result</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -249,6 +250,10 @@ const CreateStudents = () => {
                                     <td>{schoolClass.parents}</td>
                                     <td>{schoolClass.school_class}</td>
                                     <td>{schoolClass.parent_phone_number}</td>
+                                    <td>
+                                        <Link to =  {`/student/${schoolClass.id}/result/`}>View </Link>
+                                        <Link to =  {`/update/${schoolClass.id}/result/`}>Update</Link>
+                                    </td>
                                     <td>
                                         {/* admin should be able to delete or edit classes,can you provide updated code */}
                                         <button className='delete' onClick={()=>toggleDeleteForm(schoolClass.id)}>delete</button>

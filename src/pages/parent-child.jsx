@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link , useParams} from 'react-router-dom';
+import { Link , useParams,useNavigate} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import apiUrl from '../components/api-url';
 import Skeleton from "@mui/material/Skeleton";
@@ -17,9 +17,14 @@ const ParentChild = ()=>{
     const [classList, setClassList] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
     const user = useSelector((state) => state.user.user);
+     const navigate = useNavigate();
 
     const toggleSidebar = ()=>{
         setsidebarOpen(!sidebarOpen);
+    };
+    const handleResult = (event,id)=>{
+        event.preventDefault();
+        navigate(`/student/${id}/result/`)
     };
 
     const fetchChild = async () => {
@@ -69,8 +74,8 @@ const ParentChild = ()=>{
                         <div className='text-wrapper'>
                             <div className='title-header'>{data.first_name} {data.last_name}</div>
                             <p>{data.grade}</p>
-                            <div className='employee-count'>
-                                
+                            <div onClick = {(e)=>handleResult(e,data.id)} className='employee-count'>
+                                view result
                         
                             </div>
                             

@@ -13,12 +13,63 @@ import OrganizationSidebar from '../components/organization-sidebar';
 const  TeacherList = ()=>{
     const [sidebarOpen,setsidebarOpen] = useState(false);
     const [teachers, setTeachers] = useState([]);
+    const [fname, setFname] = useState('');
+    const [lname, setLname] = useState('');
+    const [email, setEmail] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const [password, setPassword] = useState('');
+    const [formModal, setFormModal] = useState(false);
     const [loading,setLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState('');
     const user = useSelector((state) => state.user.user);
 
     const toggleSidebar = ()=>{
         setsidebarOpen(!sidebarOpen);
+    };
+     const toggleForm = () => {
+        setFormModal(!formModal);
+    };
+     const handleFnameChange = (event) => {
+        setFname(event.target.value);
+    };
+    
+    const handleLnameChange = (event) => {
+        setLname(event.target.value);
+    };
+
+    const handleEmailChange = (event) => {
+        setEmail(event.target.value);
+    };
+    
+    const handlePasswordChange = (event) => {
+        setPassword(event.target.value);
+    };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsLoading(true);
+
+        try {
+           const response = await axios.post(`${apiUrl}/teacher/signup/`, {
+            first_name: fname,
+            last_name: lname,
+            email,
+            password,
+            
+            });
+
+            setIsLoading(false);
+            fetchTeachers();
+           
+            console.log("Class created successfully:", response.data);
+            //setClassName('');
+
+            
+            setFormModal(false);  // Close the form modal after successful creation
+        } catch (error) {
+            setIsLoading(false);
+            setErrorMessage("Error creating TeacheR.");
+            
+        }
     };
 
     const fetchTeachers = async () => {
@@ -52,8 +103,8 @@ const  TeacherList = ()=>{
             <div className="job-list-wrapper" id="organization-job-list">
                     <div className="employer-organizations">
                         <div className="org"></div>
-                        <div >
-                           
+                       <div onClick={toggleForm} className="create-btn">
+                            Add Teacher
                         </div>
                     </div>
                     <table>
@@ -94,6 +145,49 @@ const  TeacherList = ()=>{
            
             
         </div>
+        <form className={`organization-form ${formModal ? 'show' : ''}`} onSubmit={handleSubmit}>
+                <div className="form-wrapper">
+                    <div className="form-header-x">
+                        <div className="title">Add student</div>
+                        <div className="icon" onClick={toggleForm }>
+                            <i className="fa-solid fa-circle-xmark"></i>
+                        </div>
+                    </div>
+                    {errorMessage && <div className="error-message">{errorMessage}</div>}
+                    <div className="form-body">
+                       
+                        <div className={`form-group ${fname ? "active":""}`}>
+                            <div> first Name:</div>
+                            <input type="text" id="fname" value={fname} onChange = {handleFnameChange} required />
+                        </div>
+                        <div className={`form-group ${lname ? "active":""}`}>
+                                <div>Last Name:</div>
+                               <input type="text" id="lname" value={lname} onChange = {handleLnameChange} required />
+                        </div>
+                        <div className={`form-group ${email ? "active":""}`}>
+                                <div>Email:</div>
+                              <input type="text" id="email" value={email} onChange = {handleEmailChange} required />
+                        </div>
+                        <div className={`form-group ${password ? "active":""}`}>
+                                <div>password:</div>
+                              <input type="text" id="password" value={password} onChange = {handlePasswordChange}  required />
+                        </div>
+                        
+
+                       
+
+                        
+                       
+                       
+                        <div className="btn-wrapper">
+                            <button type="submit">
+                                Submit
+                                {isLoading && <div className="loader"></div>}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         
        </div>
     )

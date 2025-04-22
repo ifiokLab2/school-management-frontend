@@ -1,12 +1,13 @@
 
 import React, { useState } from 'react';
-
+import logo2 from '../styles/logo-2.webp';
 import '../styles/header.css';
 import { Link , useParams,useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser, setLoading } from '../actions/user-action'; // Import setUser and setLoading actions
 import apiUrl from '../components/api-url';
+
 
 const Header = ()=>{
     const dispatch = useDispatch();
@@ -36,7 +37,7 @@ const Header = ()=>{
                     <i className="fa-solid fa-bars"></i>
                 </div>
                 <Link to ='/' className='logo'>
-                    Logo
+                   <img src = {logo2} alt = "logo" />
                 </Link>
                 
                 
@@ -48,9 +49,8 @@ const Header = ()=>{
                     <i className="fa-solid fa-chevron-down"></i>
                    </div>
                    <div className =  'hover-card'>
-                    <Link to = ''>Our story</Link>
-                    <Link to = ''>Philosophy</Link>
-                    <Link to = ''>Mission Statement and core Values</Link>
+                    
+                    <Link to = '/school-mission/'>Mission Statement and core Values</Link>
                    </div>
                 </div>
                 
@@ -60,9 +60,9 @@ const Header = ()=>{
                     <i className="fa-solid fa-chevron-down"></i>
                    </div>
                    <div className =  'hover-card'>
-                    <Link to = ''>Academics Overview</Link>
-                    <Link to = ''>Curriculum</Link>
-                    <Link to = ''>Academics Excellence</Link>
+                    <Link to = '/academic-overview/'>Academics Overview</Link>
+                    <Link to = '/curriculum/'>Curriculum</Link>
+                   
                    </div>
                 </div>
                 <div  className='job-link'>
@@ -71,8 +71,8 @@ const Header = ()=>{
                     <i className="fa-solid fa-chevron-down"></i>
                    </div>
                    <div className =  'hover-card'>
-                    <Link to = ''>Extracurricular Activities</Link>
-                    <Link to = ''>Religious Activities</Link>
+                    <Link to = '/public-speaking/'>Public Speaking</Link>
+                   
                    
                    </div>
                 </div>
@@ -82,33 +82,21 @@ const Header = ()=>{
                     <i className="fa-solid fa-chevron-down"></i>
                    </div>
                    <div className =  'hover-card'>
-                    <Link to = ''>Admissions Overview</Link>
-                    <Link to = ''>Admission Process</Link>
-                    <Link to = ''>School fees</Link>
+                    
+                    <Link to = '/admission-process/'>Admission Process</Link>
+                    
                    
                    </div>
                 </div>
-                <div  className='job-link'>
-                   <div className='text-card'>
-                    <span>Enrichment </span>
-                    <i className="fa-solid fa-chevron-down"></i>
-                   </div>
-                   <div className =  'hover-card'>
-                    <Link to = ''>Leadership</Link>
-                    <Link to = ''>Innovation Hub</Link>
-                    <Link to = ''>Work experience</Link>
-                   
-                   </div>
-                </div>
+              
                 <div  className='job-link'>
                    <div className='text-card'>
                     <span>Information </span>
                     <i className="fa-solid fa-chevron-down"></i>
                    </div>
                    <div className =  'hover-card'>
-                    <Link to = ''>News & Event</Link>
-                    <Link to = ''>Newsletter</Link>
-                    <Link to = ''>Work experience</Link>
+                    <Link to = '/news/'>News & Event</Link>
+                    
                    
                    </div>
                 </div>

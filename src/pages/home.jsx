@@ -7,15 +7,45 @@ import hero3 from '../styles/hero-3.jpg';
 import sport from '../styles/sp-3.webp';
 import music from '../styles/music-2.webp';
 import speaking from '../styles/ps-3.webp';
+import { useSelector } from 'react-redux';
+import apiUrl from '../components/api-url';
 import { Swiper, SwiperSlide, } from 'swiper/react';
+import React, { useState, useEffect } from 'react';
 import { Autoplay,Pagination,Navigation } from 'swiper/modules';
 import Header from '../components/header';
 import "../styles/home.css";
+import axios from 'axios';
 import image_file from '../styles/file_m.jpg';
+import CTAFooter from '../components/cta-footer';
 import Footer from "../components/footer";
 import { Link , useParams} from 'react-router-dom';
+//const user = useSelector((state) => state.user.user);
 
 export default function Home() {
+  const [postList,setPostList] = useState([]);
+
+  const fetchPost = async () => {
+    try {
+        const response = await axios.get(`${apiUrl}/admin-post/create/`, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+                //'Authorization': `Token ${user.auth_token}`, // Include the user ID in the Authorization header
+            },
+        });
+        setPostList(response.data);
+        //setErrorMessage("");
+        console.log('response.data:',response.data);
+    } catch (error) {
+        setPostList([])
+        console.error("Error fetching teachers", error);
+        //setErrorMessage("Error fetching teacher list.");
+    }
+};
+  useEffect(() => {
+    
+      fetchPost();
+      
+  }, []);
   const slides = [
     
     hero1,
@@ -235,34 +265,58 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        <div className="footer-cta">
-        {/* Yellow Call-to-Action Section */}
-        <div className="cta-section">
-          <div className="container">
-            <div className="cta-content">
-              <h2 className="cta-heading">Enroll your Child Today!</h2>
-              <div className="cta-buttons">
-                <Link to="#" className="cta-button">
-                  APPLY FOR ADMISSION
-                </Link>
-                <Link to="#" className="cta-button">
-                  SCHEDULE A VISIT
-                </Link>
-                <Link to="#" className="cta-button">
-                  DOWNLOAD BROCHURE
-                </Link>
-                <Link to="#" className="cta-button">
-                  REQUEST A PROSPECTUS
-                </Link>
+        {/* lates post */}
+        {postList.length > 0 && (
+            <section className="latest-posts-section">
+            <div className="container">
+              <h2 className="section-title">Latest Post</h2>
+              <p className="section-subtitle">Stay up-to-date with the latest news and events at our school</p>
+  
+              <div className="posts-grid">
+                {/* Main featured post */}
+                <div className="featured-post">
+                  <div className="featured-image-container">
+                    <div className="logo-overlay">
+                      <div className="logo-circle">
+                        <img src={music} alt="School logo" className="logo-img" />
+                      </div>
+                    </div>
+                    <img
+                      src={music}
+                      alt="Digital Innovation Hubs at OIS"
+                      className="featured-image"
+                    />
+                  </div>
+                  <div className="featured-content">
+                    <h3 className="featured-title">{postList[0].title}</h3>
+                    <p className="post-date">{postList[0].date}</p>
+                    <Link to="#" className="read-more-btn">
+                      Read More
+                    </Link>
+                  </div>
+                </div>
+  
+                {/* Sidebar news items */}
+                <div className="news-sidebar">
+                    {postList.map((data)=>(
+                        <Link key = {data.id} to = "" className="news-item">
+                          <div className="news-item-image-container">
+                            <img src={sport} alt="" className="news-item-image" />
+                          </div>
+                          <div className="news-item-content">
+                            <h4 className="news-item-title">{data.title}</h4>
+                            <p className="news-item-date">{data.date}</p>
+                          </div>
+                      </Link>              
+                    ))}
+                  
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          </section>
+        )}
 
-      {/* Main Footer Section */}
-      
-        </div>
+       <CTAFooter />
 
 
 

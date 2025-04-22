@@ -1,0 +1,61 @@
+
+.result-wrapper .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  
+.result-wrapper .filters select,
+.result-wrapper .filters input {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 150px;
+  }
+  
+.result-wrapper .filters button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+.result-wrapper .filters button:hover {
+    background-color: #0056b3;
+  }
+  
+.update-result-page {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+  }
+  update-result-page .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  .update-result-page .result-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  .update-result-page .submit-btn {
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  .update-result-page .success-msg {
+    color: green;
+    margin-top: 1rem;
+  }
+  

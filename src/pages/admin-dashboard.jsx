@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import hero3 from '../styles/hero-3.jpg';
 import { Link , useParams} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import apiUrl from '../components/api-url';
@@ -314,8 +315,8 @@ const AdminDashboard = ()=>{
                             <h3>Notice Board</h3>
                             <div className="wrapper">
                                {postList.map((data)=>(
-                                     <div className="card">
-                                     <img src={data.image} alt = "card-img" />
+                                     <div key ={data.id} className="card">
+                                     <img src={hero3} alt = "card-img" />
                                      <div className = "text-wrapper">
                                          <div className='lg'>{data.title}</div>
                                          <div className='sm'>{data.description}</div>

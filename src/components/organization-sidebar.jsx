@@ -9,7 +9,7 @@ import MuiAlert from "@mui/material/Alert";
 import apiUrl from '../components/api-url';
 import { ChevronRight, ExpandMore } from '@mui/icons-material';
 
-
+import logo2 from '../styles/logo-2.webp';
 const OrganizationSidebar = ({ className, toggleSidebar }) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
@@ -25,7 +25,10 @@ const OrganizationSidebar = ({ className, toggleSidebar }) => {
     <div className={`organization-sidebar ${className}`}>
       <div className="box-a">
         <div className="header-tab">
-          <div className="text">Logo</div>
+          
+           <Link to ='/' className='logo'>
+                   <img src = {logo2} alt = "logo" />
+                </Link>
           <div className="icon" onClick={toggleSidebar}>
             <i className="fa-solid fa-xmark"></i>
           </div>
@@ -39,6 +42,8 @@ const OrganizationSidebar = ({ className, toggleSidebar }) => {
               { path: "/admin/student/create/", label: "students" },
               { path: "/admin/class/create/", label: "Class" },
               { path: "/admin/notice/", label: "Notice" },
+              { path: "/admin/subject/", label: "Subject" },
+               { path: "/pay/fees/", label: "Pay Fees" },
             ].map((link) => (
               <div
                 key={link.path}

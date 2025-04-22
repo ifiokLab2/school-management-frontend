@@ -1,0 +1,66 @@
+.result-wrapper .subjects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .result-wrapper .subjects-grid label{
+    position: unset !important;
+    font-weight:bold;
+    background-color:transparent;
+  }
+
+ .result-wrapper .subject-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+ .result-wrapper .grade-score-container {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+ .result-wrapper .grade-score-container select,
+ .result-wrapper  .grade-score-container input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  .result-wrapper  .primary-button {
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+  }
+  
+  .result-wrapper  .primary-button:hover {
+    background-color: #4338ca;
+  }
+ .result-wrapper .button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top:10px;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  
+  @media (min-width: 768px) {
+   .result-wrapper  .subjects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+   .result-wrapper .subjects-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  

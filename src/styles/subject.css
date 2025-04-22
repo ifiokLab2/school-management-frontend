@@ -1,0 +1,151 @@
+.subject-wrapper .container {
+    width: 100%;
+    margin: 0px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+   
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .subject-wrapper  .create-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .subject-wrapper  .create-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Modal */
+  .subject-wrapper  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .subject-wrapper  .modal {
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+  }
+  
+  .subject-wrapper  .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #555;
+  }
+  
+  .subject-wrapper  .input {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  .subject-wrapper  .submit-btn {
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .subject-wrapper  .submit-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Message */
+  .message {
+    margin-top: 10px;
+    font-weight: bold;
+    color: green;
+  }
+  
+  /* Subject List */
+  .subject-wrapper  .subject-list-title {
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .subject-wrapper  .subject-list {
+    margin-top: 15px;
+    padding-left: 0;
+    list-style: none;
+  }
+  
+  .subject-wrapper  .subject-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+  
+  .subject-wrapper  .subject-item span {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .subject-wrapper  .action-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .subject-wrapper  .action-buttons button {
+    padding: 6px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .subject-wrapper .edit-btn {
+    background-color: #ffc107;
+    color: black;
+  }
+  
+  .subject-wrapper  .edit-btn:hover {
+    background-color: #e0a800;
+  }
+  
+  .subject-wrapper  .delete-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .subject-wrapper  .delete-btn:hover {
+    background-color: #c82333;
+  }
+  

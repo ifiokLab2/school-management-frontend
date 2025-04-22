@@ -10,24 +10,107 @@ import '../styles/school-fees.css';
 import '../styles/repository.css';
 import OrganizationHeader from '../components/organization-header';
 import OrganizationSidebar from '../components/organization-sidebar';
-
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
+import { PaystackButton } from 'react-paystack';
 const SchoolFees = ()=>{
+    const [successMessage, setSuccessMessage] = useState('');
     const [sidebarOpen,setsidebarOpen] = useState(false);
     const [amount, setAmount] = useState('');
     const [email, setEmail] = useState('');
     const [term, setTerm] = useState('');
     const [regNo, setRegNo] = useState('');
     const [loading,setLoading] = useState(true);
-    const [classList, setClassList] = useState([]);
+    
     const [errorMessage, setErrorMessage] = useState('');
     const [studentName, setStudentName] = useState('');
     const [studentNotFound, setStudentNotFound] = useState(false);
     const user = useSelector((state) => state.user.user);
+    const publicKey = 'pk_test_b7a5e192b6819320be078de89523311fdbb55ac6'; // Replace this with your Paystack public key
+    const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "" });
+    const handleSnackbarClose = () => {
+        setSnackbar({ open: false, message: "", severity: "" });
+    };
+
+
+  const amountInKobo = parseInt(amount) * 100;
 
     const toggleSidebar = ()=>{
         setsidebarOpen(!sidebarOpen);
     };
+    const handlePaystackSuccessAction = async (reference) => {
+        try {
+         const response =  await axios.post(`${apiUrl}/api/school-fees/pay/`, {
+            amount,
+            term,
+            reg_no: regNo,
+            email,
+            year:'',
+            student:[],
+            reference: reference.reference,
+          }, {
+            headers: {
+              Authorization: `Token ${user.auth_token}`,
+            }
+          });
+          setSnackbar({
+            open: true,
+            message: "success!",
+            severity: "success",
+        });
+          setSuccessMessage("Payment successful!");
+          setErrorMessage('');
+          setAmount('');
+          setEmail('');
+          setTerm('');
+          setRegNo('');
+        } catch (error) {
+          setErrorMessage("Payment verification failed.");
+        }
+      };
+    
+      const handlePaystackCloseAction = () => {
+        console.log('Payment closed');
+      };
+    
+      const componentProps = {
+        email,
+        amount: amountInKobo,
+        metadata: {
+          reg_no: regNo,
+          term,
+          student_name: studentName
+        },
+        publicKey,
+        text: "Pay Now",
+        onSuccess: handlePaystackSuccessAction,
+        onClose: handlePaystackCloseAction,
+     };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post(`${apiUrl}/api/school-fees/pay/`, {
+                amount,
+                term,
+                reg_no: regNo,
+                email,
+            }, {
+                headers: {
+                    Authorization: `Token ${user.auth_token}`
+                }
+            });
 
+            setSuccessMessage('Payment successful!');
+            setErrorMessage('');
+            setAmount('');
+            setEmail('');
+            setTerm('');
+            setRegNo('');
+        } catch (error) {
+            setErrorMessage('Payment failed or already made for this term.');
+            setSuccessMessage('');
+        }
+    };
     
     useEffect(() => {
         const fetchStudent = async () => {
@@ -37,7 +120,8 @@ const SchoolFees = ()=>{
                 return;
             }
             try {
-                const res = await axios.get(`${apiUrl}/api/students/by-reg-no/${regNo}/`);
+                const res = await axios.get(`${apiUrl}/api/students/by-reg-no/?reg_no=${regNo}`);
+                //const res = await axios.get(`${apiUrl}/api/students/by-reg-no/${regNo}/`);
                 if (res.data && res.data.name) {
                     setStudentName(res.data.name);
                     setStudentNotFound(false);
@@ -72,7 +156,7 @@ const SchoolFees = ()=>{
                 
                 <div className='apps-container'>
                     <div className="fee-wrapper">
-                        <form className="fee-form" >
+                        <form className="fee-form" onSubmit={handleSubmit} >
                             <h2>Pay School Fees</h2>
 
                             <div className='box-tab'>
@@ -100,12 +184,12 @@ const SchoolFees = ()=>{
                             </div>
                             
                             <div className='box-tab'>
-                                <label>Amount</label>
-                                <input type="text" value={`₦${amount}`} onChange = {(e)=>setAmount(e.target.value)} />
+                                <label>Amount:(₦)</label>
+                                <input type="text" value={amount} onChange = {(e)=>setAmount(e.target.value)} />
 
                             </div>
                            
-                            <button type="submit">Pay Now</button>
+                            <PaystackButton {...componentProps} />
 
                             
                         </form>
@@ -119,7 +203,20 @@ const SchoolFees = ()=>{
            
             
         </div>
-        
+        <Snackbar
+        open={snackbar.open}
+        autoHideDuration={6000}
+        onClose={handleSnackbarClose}
+        >
+        <MuiAlert
+        elevation={6}
+        variant="filled"
+        onClose={handleSnackbarClose}
+        severity={snackbar.severity}
+        >
+        {snackbar.message}
+        </MuiAlert>
+        </Snackbar>
        </div>
     )
 };

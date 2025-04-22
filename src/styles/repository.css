@@ -4,7 +4,11 @@
     justify-content: space-between;
 }
 
-
+.employee-count{
+    color: blue;
+    padding: 6px;
+    cursor: pointer;
+}
 .annouce-tab{
     display: flex;
     align-items: center;

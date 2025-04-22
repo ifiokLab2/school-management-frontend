@@ -164,6 +164,7 @@ const Attendance = () => {
                                 
                                 <th>Status</th>
                                 <th>Action</th>
+                                <th>Result</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -209,9 +210,13 @@ const Attendance = () => {
                                         </button>
                                     )}
                                 </td>
+                                <td>
+                                    <Link to =  {`/student/${student.id}/result/`}>View </Link>
+                                </td>
                             </tr>
                         );
                     })}
+                    
                         </tbody>
                     </table>
                 </div>

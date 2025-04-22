@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { setUser } from '../actions/user-action'; // Import actions
 import axios from 'axios';
 import '../styles/organization-header.css';
+import logo2 from '../styles/logo-2.webp';
 
 const OrganizationHeader = ({ toggleSidebar })=>{
     const dispatch = useDispatch();
@@ -22,7 +23,10 @@ const OrganizationHeader = ({ toggleSidebar })=>{
                 <div className='menu-btn' onClick={toggleSidebar} >
                     <i className="fa-solid fa-bars"></i>
                 </div>
-                <div className='logo'>Logo</div>
+               <Link to ='/' className='logo'>
+                   <img src = {logo2} alt = "logo" />
+                </Link>
+
             </div>
             <div className='box-b-wrapper'>
                

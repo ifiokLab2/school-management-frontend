@@ -66,6 +66,10 @@
     font-size: 1.4rem;
     font-weight: 800;
 }
+.logo img{
+    height: 40px;
+    width: auto;
+}
 
 .header-job .header-box-a .job-link,.header-job .header-box-a .courses-link{
     font-size: 1rem;
