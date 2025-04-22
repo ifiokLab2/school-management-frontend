@@ -14,13 +14,13 @@ const CTAFooter = ()=>{
                 <Link to="/academic-overview/" className="cta-button">
                   Academics Overview
                 </Link>
-                <Link to="/curriculum/'" className="cta-button">
+                <Link to="/curriculum/" className="cta-button">
                  Curriculum
                 </Link>
                 <Link to="/admission-process/" className="cta-button">
                    Admission Process
                 </Link>
-                <Link to="/news/'" className="cta-button">
+                <Link to="/news/" className="cta-button">
                   News & Event
                 </Link>
               </div>
