@@ -161,58 +161,7 @@ const Header = ()=>{
                 <div className='side-body'>
                     <div className='title'></div>
                     <div className='link-btn'>
-                        <Link to ='' >
-                            <div className='text'>Academics Overvieww</div>
-                            <div className='icon'>
-                                <i className="fa-solid fa-chevron-right"></i>
-                            </div>
-                        </Link>  
-                    </div>
-
-                    <div className='link-btn'>
-                        <Link to ='' >
-                            <div className='text'>Curriculum</div>
-                            <div className='icon'>
-                                <i className="fa-solid fa-chevron-right"></i>
-                            </div>
-                        </Link>  
-                    </div>
-                    <div className='link-btn'>
-                        <Link to ='' >
-                            <div className='text'>Extra curricular activities</div>
-                            <div className='icon'>
-                                <i className="fa-solid fa-chevron-right"></i>
-                            </div>
-                        </Link>  
-                    </div>
-
-                    <div className='link-btn'>
-                        <Link to ='' >
-                            <div className='text'>Religious Activties</div>
-                            <div className='icon'>
-                                <i className="fa-solid fa-chevron-right"></i>
-                            </div>
-                        </Link>  
-                    </div>
-                    <div className='link-btn'>
-                        <Link to ='' >
-                            <div className='text'>Admission Overview</div>
-                            <div className='icon'>
-                                <i className="fa-solid fa-chevron-right"></i>
-                            </div>
-                        </Link>  
-                    </div>
-                    
-                    <div className='link-btn'>
-                        <Link to ='' >
-                            <div className='text'>Innovation Hub</div>
-                            <div className='icon'>
-                                <i className="fa-solid fa-chevron-right"></i>
-                            </div>
-                        </Link>  
-                    </div>
-                    <div className='link-btn'>
-                        <Link to ='' >
+                        <Link to ='/news/' >
                             <div className='text'>News & Event</div>
                             <div className='icon'>
                                 <i className="fa-solid fa-chevron-right"></i>
@@ -220,13 +169,61 @@ const Header = ()=>{
                         </Link>  
                     </div>
                     <div className='link-btn'>
-                        <Link to ='' >
-                            <div className='text'>Work Experience</div>
+                        <Link to ='/academic-overview/' >
+                            <div className='text'>Academics Overvieww</div>
                             <div className='icon'>
                                 <i className="fa-solid fa-chevron-right"></i>
                             </div>
                         </Link>  
                     </div>
+
+
+                    <div className='link-btn'>
+                        <Link to ='/curriculum/' >
+                            <div className='text'>Curriculum</div>
+                            <div className='icon'>
+                                <i className="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </Link>  
+                    </div>
+                    <div className='link-btn'>
+                    
+                        <Link to ='/school-mission/' >
+                            <div className='text'>Mission Statement</div>
+                            <div className='icon'>
+                                <i className="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </Link>  
+                    </div>
+
+                    <div className='link-btn'>
+                    
+                        <Link to ='/public-speaking/' >
+                            <div className='text'>Public Speaking</div>
+                            <div className='icon'>
+                                <i className="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </Link>  
+                    </div>
+                    <div className='link-btn'>
+                        <Link to ='/admission-process/' >
+                            <div className='text'>Admission process</div>
+                            <div className='icon'>
+                                <i className="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </Link>  
+                    </div>
+                    
+                    
+                    <div className='link-btn'>
+                        <Link to ='/news/' >
+                            <div className='text'>News & Event</div>
+                            <div className='icon'>
+                                <i className="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </Link>  
+                    </div>
+                    
 
                     
                     
