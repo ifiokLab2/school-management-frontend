@@ -290,7 +290,7 @@ export default function Home() {
                   <div className="featured-content">
                     <h3 className="featured-title">{postList[0].title}</h3>
                     <p className="post-date">{postList[0].date}</p>
-                    <Link to="#" className="read-more-btn">
+                    <Link to={`/news-detail/${postList[0].id}/post/`} className="read-more-btn">
                       Read More
                     </Link>
                   </div>
@@ -299,7 +299,7 @@ export default function Home() {
                 {/* Sidebar news items */}
                 <div className="news-sidebar">
                     {postList.map((data)=>(
-                        <Link key = {data.id} to = "" className="news-item">
+                        <Link key = {data.id} to={`/news-detail/${data.id}/post/`} className="news-item">
                           <div className="news-item-image-container">
                             <img src={sport} alt="" className="news-item-image" />
                           </div>
