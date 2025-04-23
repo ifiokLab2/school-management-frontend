@@ -91,7 +91,7 @@ const Footer = ()=>{
                   <h3>Services</h3>
                   <ul>
                     <li>
-                      <Link to="#">Pay school fees</Link>
+                      <Link to="/school-fees/">Pay school fees</Link>
                     </li>
                     
                   </ul>

@@ -38,6 +38,7 @@ import AdmissionProcess  from './pages/admission-process';
 import PublicSpeaking  from './pages/public-speaking';
 import News  from './pages/news';
 import NewsDetail  from './pages/news-detail';
+import PayFees  from './pages/pay-fees';
 
 function App() {
   return (
@@ -45,7 +46,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="news-detail/:Id/post/" element={<NewsDetail />} />
-     
+      <Route path="school-fees/" element={<PayFees />} 
       <Route path="news/" element={<News />} />
       <Route path="public-speaking/" element={<PublicSpeaking />} />
       <Route path="admission-process/" element={<AdmissionProcess />} />
