@@ -1,6 +1,6 @@
 
 import 'swiper/swiper-bundle.css';
-
+import { PaystackButton } from 'react-paystack';
 import hero1 from '../styles/school-mission-1.jpg';
 import hero2 from '../styles/school-mission-2.jpg';
 import { useSelector } from 'react-redux';
@@ -14,7 +14,7 @@ import "../styles/home.css";
 import "../styles/school-mission.css";
 import CTAFooter from '../components/cta-footer';
 import axios from 'axios';
-
+import '../styles/school-fees.css';
 import Footer from "../components/footer";
 import { Link , useParams} from 'react-router-dom';
 //const user = useSelector((state) => state.user.user);
